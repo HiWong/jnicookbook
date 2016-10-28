@@ -14,17 +14,17 @@ public class ThrowException {
   }
 
   public static void main(String[] args) {
+    // Printing java.library.path is here just for the convenience
+    // so you can check where Java will look for shared libraries
     System.out.println("library: " + System.getProperty("java.library.path"));
     ThrowException thex = new ThrowException();
 	
-		try {
-	    thex.throwException();
-		} catch(Exception ex) {
-			System.out.println("Exception was thrown in JNI");
-		}
-
-		thex.throwException();
-
+    try {
+      thex.throwException();
+    } catch(Exception ex) {
+      System.out.println("Exception was thrown in JNI");
+    }
+    thex.throwException();
   }
 }
 
