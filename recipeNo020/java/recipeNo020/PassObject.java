@@ -20,8 +20,8 @@ public class PassObject {
 
 	/* Create object to pass */
 	CustomClass cc = new CustomClass();
-	cc.iVal = 1;
-	cc.dVal = 1.1;
+	cc.iVal = 42;
+	cc.dVal = 3.14;
 	cc.cVal = 'a';
 	cc.bVal = true;
 	cc.sVal = "Hello from the CustomClass";
