@@ -35,17 +35,17 @@ JNIEXPORT void JNICALL Java_recipeNo020_PassObject_displayObject
 
 	/* Get double field */
 	jfieldID fidDouble = (*env)->GetFieldID(env, cls, "dVal", "D");
-        jdouble dVal = (*env)->GetIntField(env, objarg, fidDouble);
+        jdouble dVal = (*env)->GetDoubleField(env, objarg, fidDouble);
         printf("dVal: %f\n", dVal);
 
 	/* Get boolean field */
         jfieldID fidBoolean = (*env)->GetFieldID(env, cls, "bVal", "Z");
-        jboolean bVal = (*env)->GetIntField(env, objarg, fidBoolean);
+        jboolean bVal = (*env)->GetBooleanField(env, objarg, fidBoolean);
         printf("bVal: %d\n", bVal);	
 
 	/* Get character field */
 	jfieldID fidChar = (*env)->GetFieldID(env, cls, "cVal", "C");
-        jboolean cVal = (*env)->GetIntField(env, objarg, fidChar);
+        jboolean cVal = (*env)->GetCharField(env, objarg, fidChar);
         printf("cVal: %c\n", cVal);
 
 	/* Get String field */
