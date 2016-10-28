@@ -2,6 +2,6 @@
  
 void foo(void)
 {
-    puts("New message 2");
+    puts("New message 1");
 }
 
