@@ -20,7 +20,6 @@ pthread_t threads[NUM_THREADS];
 // This structure is used to pass both
 // jvm and env using void *
 struct JVM {
-  JNIEnv *env;
   JavaVM *jvm;
 };
 
@@ -35,7 +34,7 @@ void *jvmThreads(void* myJvm) {
 
   struct JVM *myJvmPtr = (struct JVM*) myJvm;
   JavaVM *jvmPtr = myJvmPtr -> jvm;
-  JNIEnv *env = myJvmPtr -> env;
+  JNIEnv *env = NULL;
 
   // 1. lock the mutex
   // 2. give some info to the user
@@ -113,9 +112,9 @@ int main(int argc, char **argv)
 {
     // First of all, let's try to create JVM
     struct JVM myJvm;
-    myJvm.env = create_vm(&myJvm);
+    JNIEnv *myEnv = create_vm(&myJvm);
 
-    if(myJvm.env == NULL)
+    if(myEnv == NULL)
         return 1;
 
     // Initialize mutex and start threads
