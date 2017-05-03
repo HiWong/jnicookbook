@@ -1,8 +1,8 @@
 #include <jni.h>
 
-#ifdef __cplusplus
+//#ifdef __cplusplus
 extern "C" {
-#endif
+//#endif
 
 typedef struct {
     jint x1;
@@ -11,6 +11,6 @@ typedef struct {
     jint y2;
 } Bounds;
 
-#ifdef __cplusplus
+//#ifdef __cplusplus
 };
-#endif
+//#endif
