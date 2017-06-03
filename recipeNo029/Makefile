@@ -1,0 +1,18 @@
+include ../Makefile.common
+
+all: compilejava compilec
+
+compilec:
+	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo029_Daemon.c -o lib/libDaemon.$(EXT)
+
+compilejava:
+	$(JAVA_HOME)/bin/javac -d target java/recipeNo029/Daemon.java
+	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo029.Daemon
+
+test:
+	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo029.Daemon
+
+clean:
+	-rm -rfv target/*
+	-rm c/recipeNo029_Daemon.h
+	-rm -rf lib/*
