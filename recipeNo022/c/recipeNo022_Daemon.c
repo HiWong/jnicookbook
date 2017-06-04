@@ -58,6 +58,12 @@ JNIEXPORT void JNICALL Java_recipeNo022_Daemon_demonize
     close(STDOUT_FILENO);
     close(STDERR_FILENO);
 
+    /* Assign all files to /dev/null */
+    open ("/dev/null", O_RDWR);
+    dup (0);
+    dup (0);
+
+    /* Daemon loop */
     while(1) {
       sleep(1);
       fprintf(fid, "I am daemon ;)\n");

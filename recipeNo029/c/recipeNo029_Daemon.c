@@ -55,6 +55,11 @@ JNIEXPORT int JNICALL Java_recipeNo029_Daemon_demonize
     close(STDIN_FILENO);
     close(STDOUT_FILENO);
     close(STDERR_FILENO);
+
+    /* Assign all files to /dev/null */
+    open ("/dev/null", O_RDWR);
+    dup (0);
+    dup (0);
   }
   return pid;
  
