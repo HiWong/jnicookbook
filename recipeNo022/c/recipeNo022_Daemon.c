@@ -48,7 +48,7 @@ JNIEXPORT void JNICALL Java_recipeNo022_Daemon_demonize
     }
         
     /* Change the current working directory */
-    if ((chdir("/tmp")) < 0) {
+    if ((chdir("/")) < 0) {
       /* Log the failure */
       exit(EXIT_FAILURE);
     }
@@ -60,7 +60,7 @@ JNIEXPORT void JNICALL Java_recipeNo022_Daemon_demonize
 
     while(1) {
       sleep(1);
-      fprintf(fid, "daemon\n");
+      fprintf(fid, "I am daemon ;)\n");
       fflush( fid );
     }
   }
