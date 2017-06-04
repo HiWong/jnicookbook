@@ -1,5 +1,6 @@
-#include <stdio.h>
 #include <unistd.h>
+#include <sys/stat.h>
+#include <stdlib.h>
 #include "jni.h"
 #include "recipeNo029_Daemon.h"
 
@@ -30,7 +31,31 @@ JNIEXPORT int JNICALL Java_recipeNo029_Daemon_demonize
      or will quit execution
      0  - means we are the daemon
      !0 - means we are oryginal code
+
+     if we are daemon, we can make all the mainteanance here
   */
+  if( pid == 0 ) {
+    /* Change the file mode mask */
+    umask(0);
+
+    /* Create a new SID for the child process */
+    int sid = setsid();
+    if (sid < 0) {
+      /* Log the failure */
+      exit(EXIT_FAILURE);
+    }
+
+    /* Change the current working directory */
+    if ((chdir("/tmp")) < 0) {
+      /* Log the failure */
+      exit(EXIT_FAILURE);
+    }
+
+    /* Close out the standard file descriptors */
+    close(STDIN_FILENO);
+    close(STDOUT_FILENO);
+    close(STDERR_FILENO);
+  }
   return pid;
  
 }

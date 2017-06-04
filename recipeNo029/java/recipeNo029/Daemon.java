@@ -3,6 +3,7 @@ package recipeNo029;
 
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.*;
 
 public class Daemon {
 
@@ -37,24 +38,38 @@ public class Daemon {
         /* I don't care about file, I simply assume that we can
            access /tmp
         */
-    	PrintWriter writer = new PrintWriter("/tmp/daemon_java", "UTF-8");
+       
+	/* Close all streams */
+	System.err.close();
+	System.in.close();
 
-	/* Ever and ever forever you'll be the one 
+	/* Redirect System.out to file
+           I make strong assumption here that we have access
+           to /tmp
+    	*/
+        OutputStream output = new FileOutputStream("/tmp/daemon_java");
+        PrintStream printOut = new PrintStream(output);
+
+        System.setOut(printOut);
+
+	/* main daemon loop
+
+           Ever and ever forever you'll be the one 
            That shines in me like the morning sun
 	   ...
         */
 	while( true ) {
 	  Thread.sleep(1000);
-    	  writer.println("I am daemon ;)");
-	  writer.flush(); // If we don't flush we might not see progress
+          System.out.println("I am daemon ;)");
+          System.out.flush();
 	}
       } catch (IOException e) {
-        // I don't care about exception	
+        // I don't care about exception
       }	catch (Exception ex) {
         // I don't care about exception
       }
     } else {
-      /* Quit Java application - but daemon will still work 
+      /* Quit Java application - but daemon will still works
       */
       System.out.println("Quiting Java application");
     }
