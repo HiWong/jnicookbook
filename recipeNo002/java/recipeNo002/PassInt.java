@@ -1,14 +1,14 @@
-/* HelloWorld.java */
-package recipeNo001;
+/* PassInt.java */
+package recipeNo002;
 
-public class HelloWorld {
+public class PassInt {
 
 	/* This is the native method we want to call */
-	public static native void displayMessage();
+	public static native void displayInt(int value);
 
 	/* Inside static block we will load shared library */
   static {
-    System.loadLibrary("HelloWorld");
+    System.loadLibrary("PassInt");
   }
 
   public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class HelloWorld {
 			+ System.getProperty("java.library.path"));
 
 		/* Call to shared library */
-    HelloWorld.displayMessage();
+    PassInt.displayInt(1);
   }
 }
 
