@@ -2,9 +2,14 @@ include ../Makefile.common
 
 all: compilejava compilec
 
+ifeq ($(ARCH),darwin)
+CC_MAC_OS=-undefined dynamic_lookup -install_name libAnotherFunction.$(EXT)
+CC_MAC_OS_NAME=-install_name libHelloWorld.$(EXT)
+endif
+
 compilec:
-	cc -g -shared -fpic -undefined dynamic_lookup c/recipeNo023_AnotherFunction.c -install_name libAnotherFunction.$(EXT) -o lib/libAnotherFunction.$(EXT)
-	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo023_HelloWorld.c -L./lib -lAnotherFunction -install_name libHelloWorld.$(EXT) -o lib/libHelloWorld.$(EXT)
+	cc -g -shared -fpic c/recipeNo023_AnotherFunction.c $(CC_MAC_OS) -o lib/libAnotherFunction.$(EXT)
+	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo023_HelloWorld.c -L./lib -lAnotherFunction $(CC_MAC_OS_NAME) -o lib/libHelloWorld.$(EXT)
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -d target java/recipeNo023/HelloWorld.java
