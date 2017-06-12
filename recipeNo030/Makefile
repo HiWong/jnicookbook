@@ -1,0 +1,24 @@
+include ../Makefile.common
+
+all: compilejava compilec
+
+compilec:
+	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo030_HelloWorldNativeA.c -o lib/libHelloWorldNativeA.$(EXT)
+	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo030_HelloWorldNativeB.c -o lib/libHelloWorldNativeB.$(EXT)
+
+compilejava:
+	$(JAVA_HOME)/bin/javac -d target java/recipeNo030/AbstractHelloWorld.java
+	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo030/HelloWorldNativeA.java
+	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo030/HelloWorldNativeB.java
+	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo030/Main.java
+	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo030.HelloWorldNativeA
+	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo030.HelloWorldNativeB
+
+test:
+	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo030.Main
+
+clean:
+	-rm -rfv target/*
+	-rm c/recipeNo030_HelloWorldNativeA.h
+	-rm c/recipeNo030_HelloWorldNativeB.h
+	-rm -rf lib/*
