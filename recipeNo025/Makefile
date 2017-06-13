@@ -15,5 +15,4 @@ test:
 clean:
 	-rm -rfv target/*
 	-rm c/recipeNo025_HelloWorld.h
-	-rm c/*.o
 	-rm -rf lib/*
