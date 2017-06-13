@@ -3,8 +3,7 @@ include ../Makefile.common
 all: compilejava compilec
 
 compilec:
-	g++ -O2 -fPIC -fpermissive -I./c -I/System/Library/Frameworks/JavaVM.framework/Versions/A/Headers -DUNIX -c -o c/recipeNo025_HelloWorld.o c/recipeNo025_HelloWorld.cpp
-	g++ -g -shared c/recipeNo025_HelloWorld.o -o lib/libHelloWorld.$(EXT)
+	g++ -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo025_HelloWorld.cpp c/Simple.cpp -o lib/libHelloWorld.$(EXT)
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -d target java/recipeNo025/HelloWorld.java
