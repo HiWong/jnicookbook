@@ -1,4 +1,4 @@
-/* HelloWorld.java */
+/* HelloWorldNativeB.java */
 package recipeNo030;
 
 public class HelloWorldNativeB extends AbstractHelloWorld {

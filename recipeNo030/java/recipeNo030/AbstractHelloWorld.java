@@ -1,4 +1,4 @@
-/* HelloWorld.java */
+/* AbstractHelloWorld.java */
 package recipeNo030;
 
 public abstract class AbstractHelloWorld {
