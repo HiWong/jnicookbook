@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include "jni.h"
 #include "recipeNo029_Daemon.h"
 
