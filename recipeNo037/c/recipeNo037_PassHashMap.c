@@ -14,7 +14,7 @@ JNIEXPORT int JNICALL Java_recipeNo037_PassHashMap_displayHashMap
          public java.util.Set<K> keySet();
            descriptor: ()Ljava/util/Set;
   */
- 
+  
   jmethodID midKeySet = 
     (*env)->GetMethodID(env, clsHashMap, "keySet", "()Ljava/util/Set;"); 
 
@@ -38,29 +38,43 @@ JNIEXPORT int JNICALL Java_recipeNo037_PassHashMap_displayHashMap
   jmethodID midToArray =
     (*env)->GetMethodID(env, clsSet, "toArray", "()[Ljava/lang/Object;");
 
+  /* We have to make sure that method exists */
   if (midKeySet == NULL) {
     return -2; /* method not found */
   }
 
+  /* Once we have method, we can call "toArray" and this way
+     get array of all keys */
   jobjectArray arrayOfKeys = (*env)->CallObjectMethod(env, objKeySet, midToArray);
 
+  /* We will iterate over the array so we can get value for each key */
   int arraySize = (*env)->GetArrayLength(env, arrayOfKeys);
 
+  /* We want to go over all elements (all keys) */
   for (int i=0; i < arraySize; i++) 
   {
+    /* First, we need to get key value from array of all keys */
     jstring objKey = (*env)->GetObjectArrayElement(env, arrayOfKeys, i);
     const char* c_string_key = (*env)->GetStringUTFChars(env, objKey, 0);
 
     /* Once we have key, we can retrieve value for that key */
     jmethodID midGet =
       (*env)->GetMethodID(env, clsHashMap, "get", "(Ljava/lang/Object;)Ljava/lang/Object;");
+
+
+    /* We have to make sure that method exists */
+    if (midGet == NULL) {
+      return -3; /* method not found */
+    }
     
     /* It's time to get Value for Key */
     jobject objValue = (*env)->CallObjectMethod(env, objarg, midGet, objKey);
     const char* c_string_value = (*env)->GetStringUTFChars(env, objValue, 0);
   
+    /* Now, we can print values passed to C from Java */
     printf("[key, value] = [%s, %s]\n", c_string_key, c_string_value);
 
+    /* Make sure to release local stuff */
     (*env)->ReleaseStringUTFChars(env, objKey, c_string_key);
     (*env)->DeleteLocalRef(env, objKey);
 
