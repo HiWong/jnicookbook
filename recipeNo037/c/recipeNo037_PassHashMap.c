@@ -46,7 +46,7 @@ JNIEXPORT int JNICALL Java_recipeNo037_PassHashMap_displayHashMap
 
   int arraySize = (*env)->GetArrayLength(env, arrayOfKeys);
 
-  for (int i=0; i < arraySize; ++i) 
+  for (int i=0; i < arraySize; i++) 
   {
     jstring objKey = (*env)->GetObjectArrayElement(env, arrayOfKeys, i);
     const char* c_string_key = (*env)->GetStringUTFChars(env, objKey, 0);
