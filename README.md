@@ -68,4 +68,24 @@ recipe № 027 - Calling class methods from multiple threads
 
 recipe № 028 - Calling JVM class from C (first draft for thread based computations)
 
+recipe № 029 - Running Java as daemon – main daemon’s loop in Java
+
+recipe № 030 - Abstract method and native implementation
+
+recipe № 031 - Running simple JNI code from inside JAR file
+
+recipe № 032 - Calling JVM from multiple C threads
+
+recipe № 033 - Comparing execution time of "Hello world!" executed from JNI/JNA/ProcessBuilder
+
+recipe № 034 - Running simple JNI code from Outer class and Inner class
+
+recipe № 035 - Running simple JNI code from inside JAR file with libraries it depends on
+
+recipe № 037 - Passing HashMap to C code via JNI
+
+recipe № 038 - Passing HashMap to C code via JNI (using two arrays)
+
+recipe № 039 - Passing two dimentional array to C code via JNI
+
 recipe № D001 - debugging JNI code with CLion (sample code)
