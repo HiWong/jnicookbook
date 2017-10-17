@@ -86,6 +86,6 @@ recipe № 037 - Passing HashMap to C code via JNI
 
 recipe № 038 - Passing HashMap to C code via JNI (using two arrays)
 
-recipe № 039 - Passing two dimentional array to C code via JNI
+recipe № 039 - Calling (from C) Java method that returns 2D array 
 
 [recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/) - debugging JNI code with CLion (sample code)
