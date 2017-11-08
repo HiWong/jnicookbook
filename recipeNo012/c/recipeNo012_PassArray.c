@@ -28,10 +28,11 @@ JNIEXPORT void JNICALL Java_recipeNo012_PassArray_passByteArray
 
 	/* get the body of array; it will be referecende by C pointer */
   jbyte *body = (*env)->GetByteArrayElements(env, array, 0);
+  char *cbody = (char*)body;
 
 	/* do some stuff */
   for(int i=0; i < len; i++) {
-  	printf("Byte value: %d\n", body[i]);
+  	printf("Byte value: %d\n", cbody[i]);
 	}
 
 	/* release body when you decide it is no longer needed */	
