@@ -38,3 +38,17 @@ JNIEXPORT int JNICALL Java_recipeNo040_PassByteBuffer_displayByteBuffer
   return 0;
 
 }
+
+JNIEXPORT int JNICALL Java_recipeNo040_PassByteBuffer_displayDirectByteBuffer
+  (JNIEnv *env, jclass obj, jobject objarg) {
+
+  jbyte *buff = (jbyte *) (*env)->GetDirectBufferAddress(env, objarg );
+	
+  /* Now, it's time to get some values */
+  for(int i=0; i<BUFFER_SIZE; i++) {
+    printf("%d\n", buff[i]); 
+  }
+
+  return 0;
+
+}

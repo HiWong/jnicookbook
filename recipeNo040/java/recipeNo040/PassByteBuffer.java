@@ -10,6 +10,9 @@ public class PassByteBuffer {
 
   /* This is the native method we want to call */
   public static native int displayByteBuffer(Object obj);
+  
+  /* This is the native method we want to call */
+  public static native int displayDirectByteBuffer(Object obj);
 
   /* Inside static block we will load shared library */
   static {
@@ -29,8 +32,17 @@ public class PassByteBuffer {
       buf.put(i);
     }
 
+    /* Create object to pass */
+    ByteBuffer bufDirect = ByteBuffer.allocateDirect( BUFFER_SIZE );
+    for(byte i=0; i<BUFFER_SIZE; i++) {
+      bufDirect.put(i);
+    }
+
     /* Call to shared library */
     PassByteBuffer.displayByteBuffer( buf );
+
+    PassByteBuffer.displayDirectByteBuffer( bufDirect );
+
   }
 }
 
