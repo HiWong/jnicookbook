@@ -12,6 +12,7 @@ all: main compilejava
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo028/Main.java
+	$(JAVA_HOME)/bin/javac -h c -cp target -d target java/Main.java
 
 recipeNo028_main.o: c/recipeNo028_main.c
 	$(CC) -o lib/recipeNo028_main.o -c c/recipeNo028_main.c \
