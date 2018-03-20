@@ -21,8 +21,8 @@ void mode_default() {
 
 JNIEXPORT void JNICALL Java_recipeNo024_HelloWorld_displayMessage
   (JNIEnv *env, jclass obj, int mode) {
-
-	while(1) {
+	int i=0;
+	while(i++<3) {
 		sleep(10);
 		switch (mode) {
 			case 1: mode_1();
