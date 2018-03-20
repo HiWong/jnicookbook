@@ -6,8 +6,7 @@ compilec:
 	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo006_PassChar.c -o lib/libPassChar.$(EXT)
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -d target java/recipeNo006/PassChar.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo006.PassChar
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo006/PassChar.java
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo006.PassChar

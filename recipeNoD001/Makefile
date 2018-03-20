@@ -6,8 +6,7 @@ compilec:
 	cc -g -O0 -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNoD001_HelloWorld.c -o lib/libJNIDebugCLion.$(EXT)
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -d target java/recipeNoD001/HelloWorld.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNoD001.HelloWorld
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNoD001/HelloWorld.java
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=./lib -cp target recipeNoD001.HelloWorld

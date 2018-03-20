@@ -7,8 +7,7 @@ compilec:
 
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo040/PassByteBuffer.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo040.PassByteBuffer
+	$(JAVA_HOME)/bin/javac -h c -cp target -d target java/recipeNo040/PassByteBuffer.java
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo040.PassByteBuffer

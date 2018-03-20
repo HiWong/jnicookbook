@@ -8,11 +8,9 @@ compilec:
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -d target java/recipeNo030/AbstractHelloWorld.java
-	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo030/HelloWorldNativeA.java
-	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo030/HelloWorldNativeB.java
+	$(JAVA_HOME)/bin/javac -h c -cp target -d target java/recipeNo030/HelloWorldNativeA.java
+	$(JAVA_HOME)/bin/javac -h c -cp target -d target java/recipeNo030/HelloWorldNativeB.java
 	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo030/Main.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo030.HelloWorldNativeA
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo030.HelloWorldNativeB
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo030.Main

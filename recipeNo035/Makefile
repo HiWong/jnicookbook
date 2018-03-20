@@ -8,11 +8,9 @@ compilec:
 	cc -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -Llib -lSharedLib c/recipeNo035_HelloWorld.c -o lib/libHelloWorld.lib
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -d target java/recipeNo035/HelloWorld.java
-	$(JAVA_HOME)/bin/javac -d target java/recipeNo035/Chdir.java
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo035/HelloWorld.java
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo035/Chdir.java
 	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo035/Main.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo035.HelloWorld
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo035.Chdir
 
 jar:
 	jar cfe recipeNo035.jar recipeNo035.Main -C target . lib	

@@ -10,8 +10,7 @@ compilec:
 	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -rpath @loader_path c/recipeNo018_ReloadLib.c -o lib/libReloadLibJNI.$(EXT) 
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -d target java/recipeNo018/ReloadLib.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo018.ReloadLib
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo018/ReloadLib.java
 
 test:	reloadlib
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo018.ReloadLib

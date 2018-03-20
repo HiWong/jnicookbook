@@ -9,8 +9,7 @@ compilec:
 compilejava:
 	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo020/OtherClass.java
 	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo020/CustomClass.java
-	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo020/PassObject.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo020.PassObject
+	$(JAVA_HOME)/bin/javac -h c -cp target -d target java/recipeNo020/PassObject.java
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo020.PassObject

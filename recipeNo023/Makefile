@@ -15,8 +15,7 @@ compilec:
 	cc -g $(SHARED_OPTION) -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo023_HelloWorld.c $(CC_LIB) -o lib/libHelloWorld.$(EXT)
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -d target java/recipeNo023/HelloWorld.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo023.HelloWorld
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo023/HelloWorld.java
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path="$(CURDIR)/lib:$(CURDIR)/" -cp target recipeNo023.HelloWorld

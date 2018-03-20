@@ -9,9 +9,8 @@ compilec:
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -d target -cp ./jar/jna-4.2.2.jar java/recipeNo033/HelloWorldJNA.java
-	$(JAVA_HOME)/bin/javac -d target java/recipeNo033/HelloWorldJNI.java
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo033/HelloWorldJNI.java
 	$(JAVA_HOME)/bin/javac -d target java/recipeNo033/HelloWorldProcess.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo033.HelloWorldJNI
 
 test: testprocess testjni testjna
 

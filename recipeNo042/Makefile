@@ -7,8 +7,7 @@ compilec:
 
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo042/PassSet.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo042.PassSet
+	$(JAVA_HOME)/bin/javac -h c -cp target -d target java/recipeNo042/PassSet.java
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo042.PassSet

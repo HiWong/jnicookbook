@@ -6,8 +6,7 @@ compilec:
 	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo003_PassDouble.c -o lib/libPassDouble.$(EXT)
 
 compilejava:
-	$(JAVA_HOME)/bin/javac -d target java/recipeNo003/PassDouble.java
-	$(JAVA_HOME)/bin/javah -jni -d c -cp target recipeNo003.PassDouble
+	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo003/PassDouble.java
 
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo003.PassDouble
