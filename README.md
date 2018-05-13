@@ -88,4 +88,10 @@ recipe № 038 - Passing HashMap to C code via JNI (using two arrays)
 
 recipe № 039 - Calling (from C) Java method that returns 2D array 
 
+recipe № 040 - Passing ByteBuffer to C code via JNI
+
+recipe № 042 - Passing Set of Strings to C code via JNI
+
+recipe № 043 - Settings environment variable inside JVM via JNI
+
 [recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/) - debugging JNI code with CLion (sample code)

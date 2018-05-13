@@ -18,3 +18,4 @@ clean:
 	-rm c/recipeNo015_SigSegv.h
 	-rm c/recipeNo015_SigSegvNoHandler.h
 	-rm -rf lib/*
+	-rm hs_err*
