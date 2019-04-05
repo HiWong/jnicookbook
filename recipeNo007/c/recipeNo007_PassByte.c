@@ -3,8 +3,8 @@
 #include "recipeNo007_PassByte.h"
 
 JNIEXPORT void JNICALL Java_recipeNo007_PassByte_displayByte
-  (JNIEnv *env, jclass obj, jbyte value) {
+                (JNIEnv * env, jclass obj, jbyte value) {
 
-	printf("Passed value: %d\n", value);
+  printf("Passed value: %d\n", value);
 
 }
