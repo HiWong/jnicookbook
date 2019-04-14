@@ -21,6 +21,5 @@ public class HelloWorld {
 
     /* Call to shared library */
     HelloWorld.displayMessage();
-    HelloWorld.cut("aa", 1, 2, "aaa");
   }
 }
