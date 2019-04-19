@@ -9,7 +9,6 @@ extern jmp_buf ljenv;
 // if we reach here, it means somebody
 // tried to call exit; this time we are declaring
 // exit to be stopExit
-void stopExit() {
-  siglongjmp(ljenv, 1);
+void stopExit () {
+  siglongjmp (ljenv, 1);
 }
-
