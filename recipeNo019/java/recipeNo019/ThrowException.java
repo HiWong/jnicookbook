@@ -18,13 +18,12 @@ public class ThrowException {
     // so you can check where Java will look for shared libraries
     System.out.println("library: " + System.getProperty("java.library.path"));
     ThrowException thex = new ThrowException();
-	
+
     try {
       thex.throwException();
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       System.out.println("Exception was thrown in JNI");
     }
     thex.throwException();
   }
 }
-
