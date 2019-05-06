@@ -9,22 +9,30 @@ Inside this repository you can find JNI related codes that I have collected over
 
 The easiest way to build and run codes is to clone the repo and run all tests.
 
-    git clone https://github.com/mkowsiak/jnicookbook.git
-    cd jnicookbook
-    make all
-    make test
-    make clean
+    > git clone https://github.com/mkowsiak/jnicookbook.git
+    > cd jnicookbook
+    > make all
+    > make test
+    > make clean
     
 Remember that you can always run each and every sample separatelly. Simply call `make` inside given recipe. Let's say you want to run `recipeNo001`. All you have to do is to run
 
-    cd jnicookbook/recipeNo001
-    make
+    > cd jnicookbook/recipeNo001
+    > make
     /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk...
     ...
-    make test
+    > make test
     /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk...
     library: :./lib
     Hello world!
+    
+# Ready for Java 10 and onwards
+
+JNI Cookbook samples were adapted to Java 10 release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with Java 8 - for any reasons - you should be able to use samples as well.
+
+# Requirements
+
+At the moment, JNI Cookbook targets Linux and macOS. It should work on both platforms without any issues.
 
 # Table of content
 
