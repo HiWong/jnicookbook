@@ -3,90 +3,94 @@
 #include "recipeNo020_PassObject.h"
 
 JNIEXPORT void JNICALL Java_recipeNo020_PassObject_displayObject
-  (JNIEnv *env, jclass obj, jobject objarg) {
-	
-	/* Get objarg's class - objarg is the one we pass from
-           Java */
-	jclass cls = (*env)->GetObjectClass(env, objarg);
+  (JNIEnv * env, jclass obj, jobject objarg) {
 
-	/* For accessing primitive types from class use
-           following field descriptors
+  /* Get objarg's class - objarg is the one we pass from
+     Java */
+  jclass cls = (*env)->GetObjectClass (env, objarg);
 
-           +---+---------+
-           | Z | boolean |
-           | B | byte    |
-           | C | char    |
-           | S | short   |
-           | I | int     |
-           | J | long    |
-           | F | float   |
-           | D | double  |
-           +-------------+
-	*/
+  /* For accessing primitive types from class use
+     following field descriptors
 
-	/* Get int field 
+     +---+---------+
+     | Z | boolean |
+     | B | byte    |
+     | C | char    |
+     | S | short   |
+     | I | int     |
+     | J | long    |
+     | F | float   |
+     | D | double  |
+     +-------------+
+   */
 
-	   Take a look here, we are passing char* with 
-           field descriptor - e.g. "I" => int 
-        */
-	jfieldID fidInt = (*env)->GetFieldID(env, cls, "iVal", "I");
-	jint iVal = (*env)->GetIntField(env, objarg, fidInt);
-	printf("iVal: %d\n", iVal);
+  /* Get int field 
 
-	/* Get double field */
-	jfieldID fidDouble = (*env)->GetFieldID(env, cls, "dVal", "D");
-        jdouble dVal = (*env)->GetDoubleField(env, objarg, fidDouble);
-        printf("dVal: %f\n", dVal);
+     Take a look here, we are passing char* with 
+     field descriptor - e.g. "I" => int 
+   */
+  jfieldID fidInt = (*env)->GetFieldID (env, cls, "iVal", "I");
+  jint iVal = (*env)->GetIntField (env, objarg, fidInt);
+  printf ("iVal: %d\n", iVal);
 
-	/* Get boolean field */
-        jfieldID fidBoolean = (*env)->GetFieldID(env, cls, "bVal", "Z");
-        jboolean bVal = (*env)->GetBooleanField(env, objarg, fidBoolean);
-        printf("bVal: %d\n", bVal);	
+  /* Get double field */
+  jfieldID fidDouble = (*env)->GetFieldID (env, cls, "dVal", "D");
+  jdouble dVal = (*env)->GetDoubleField (env, objarg, fidDouble);
+  printf ("dVal: %f\n", dVal);
 
-	/* Get character field */
-	jfieldID fidChar = (*env)->GetFieldID(env, cls, "cVal", "C");
-        jboolean cVal = (*env)->GetCharField(env, objarg, fidChar);
-        printf("cVal: %c\n", cVal);
+  /* Get boolean field */
+  jfieldID fidBoolean = (*env)->GetFieldID (env, cls, "bVal", "Z");
+  jboolean bVal = (*env)->GetBooleanField (env, objarg, fidBoolean);
+  printf ("bVal: %d\n", bVal);
 
-	/* Get String field */
-        jfieldID fidString = (*env)->GetFieldID(env, cls, "sVal", "Ljava/lang/String;");
-        jobject sVal = (*env)->GetObjectField(env, objarg, fidString);
+  /* Get character field */
+  jfieldID fidChar = (*env)->GetFieldID (env, cls, "cVal", "C");
+  jboolean cVal = (*env)->GetCharField (env, objarg, fidChar);
+  printf ("cVal: %c\n", cVal);
 
-        // we have to get string bytes into C string
-        const char *c_str;
-        c_str = (*env)->GetStringUTFChars(env, sVal, NULL);
-  	if(c_str == NULL) {
-    		return;
-  	}
- 
-  	printf("sVal: %s\n", c_str);
- 
-  	// after using it, remember to release the memory
-  	(*env)->ReleaseStringUTFChars(env, sVal, c_str);
+  /* Get String field */
+  jfieldID fidString =
+    (*env)->GetFieldID (env, cls, "sVal", "Ljava/lang/String;");
+  jobject sVal = (*env)->GetObjectField (env, objarg, fidString);
 
-	/* Get OtherClass */
-	jfieldID fidOtherClass = (*env)->GetFieldID(env, cls, "oVal", "LrecipeNo020/OtherClass;");
-        jobject oVal = (*env)->GetObjectField(env, objarg, fidOtherClass);
+  // we have to get string bytes into C string
+  const char *c_str;
+  c_str = (*env)->GetStringUTFChars (env, sVal, NULL);
+  if (c_str == NULL) {
+    return;
+  }
 
-	jclass clsOtherClass = (*env)->GetObjectClass(env, oVal);
+  printf ("sVal: %s\n", c_str);
 
-	/* Once we have OtherClass class and OtherClass object
-	   we can access OtherClass'es components
-        */
+  // after using it, remember to release the memory
+  (*env)->ReleaseStringUTFChars (env, sVal, c_str);
 
-	/* Get String field from OtherClass */
-        jfieldID fidStringOtherClass = (*env)->GetFieldID(env, clsOtherClass, "sVal", "Ljava/lang/String;");
-        jobject sValOtherClass = (*env)->GetObjectField(env, oVal, fidStringOtherClass);
+  /* Get OtherClass */
+  jfieldID fidOtherClass =
+    (*env)->GetFieldID (env, cls, "oVal", "LrecipeNo020/OtherClass;");
+  jobject oVal = (*env)->GetObjectField (env, objarg, fidOtherClass);
 
-        // we have to get string bytes into C string
-        const char *c_str_oc;
-        c_str_oc = (*env)->GetStringUTFChars(env, sValOtherClass, NULL);
-        if(c_str_oc == NULL) {
-                return;
-        }
+  jclass clsOtherClass = (*env)->GetObjectClass (env, oVal);
 
-        printf("OtherClass.sVal: %s\n", c_str_oc);
+  /* Once we have OtherClass class and OtherClass object
+     we can access OtherClass'es components
+   */
 
-        // after using it, remember to release the memory
-        (*env)->ReleaseStringUTFChars(env, sValOtherClass, c_str_oc);	
+  /* Get String field from OtherClass */
+  jfieldID fidStringOtherClass =
+    (*env)->GetFieldID (env, clsOtherClass, "sVal", "Ljava/lang/String;");
+  jobject sValOtherClass =
+    (*env)->GetObjectField (env, oVal, fidStringOtherClass);
+
+  // we have to get string bytes into C string
+  const char *c_str_oc;
+  c_str_oc = (*env)->GetStringUTFChars (env, sValOtherClass, NULL);
+  if (c_str_oc == NULL) {
+    return;
+  }
+
+  printf ("OtherClass.sVal: %s\n", c_str_oc);
+
+  // after using it, remember to release the memory
+  (*env)->ReleaseStringUTFChars (env, sValOtherClass, c_str_oc);
 }
