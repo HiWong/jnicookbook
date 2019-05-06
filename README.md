@@ -2,7 +2,7 @@
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/mkowsiak/jnicookbook/blob/master/LICENSE.md)
 [![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/JNICookbook.png" width="600">
+  <img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/JNICookbook.png">
 </p>
 
 Inside this repository you can find JNI related codes that I have collected over years of working with JNI. You can also find a companion book, where I describe some topics in details.  JNI Cookbook page can be found here: [JNI Cookbook](http://jnicookbook.owsiak.org)
@@ -31,6 +31,14 @@ Remember that you can always run each and every sample separatelly. Simply call 
 # Ready for Java 10 and onwards
 
 JNI Cookbook samples were adapted to Java 10 release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with Java 8 - for any reasons - you should be able to use samples as well.
+
+# Debugging
+
+Debugging JNI code is not quite like sitting on cloud nine. You have to attach to JVM where JNI code is running and debug native code using external tools (e.g.: `gdb`, `CLion`). You can find some hints inside JNICookbook as well. Even more, you can find a vide that demonstates how to debug JNI code using IntelliJ and CLion
+
+<p align="center">
+  <a href="https://youtu.be/8Cjeq4l5COU"><img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/debug.png"></a>
+</p>
 
 # Requirements
 
