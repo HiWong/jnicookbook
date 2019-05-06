@@ -94,4 +94,6 @@ recipe № 042 - Passing Set of Strings to C code via JNI
 
 recipe № 043 - Settings environment variable inside JVM via JNI
 
+recipe № 044 - Getting info (inside JNI code) regarding current thread using java.lang.Thread
+
 [recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/) - debugging JNI code with CLion (sample code)
