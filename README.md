@@ -48,8 +48,8 @@ At the moment, JNI Cookbook targets Linux and macOS. It should work on both plat
 
 |Recipe № | Short description |
 |---|---|
-|[recipe № 001](http://jnicookbook.owsiak.org/recipe-No-001/)|running simple JNI code|
-|[recipe № 002](http://jnicookbook.owsiak.org/recipe-No-002/)|passing int value from Java to C|
+|[recipe № 001](http://jnicookbook.owsiak.org/recipe-No-001/)|running simple JNI code [source](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo001)|
+|[recipe № 002](http://jnicookbook.owsiak.org/recipe-No-002/)|passing int value from Java to C [source](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo001)|
 |[recipe № 003](http://jnicookbook.owsiak.org/recipe-No-003/)|passing double value from Java to C|
 |[recipe № 004](http://jnicookbook.owsiak.org/recipe-No-004/)|passing long value from Java to C|
 |[recipe № 005](http://jnicookbook.owsiak.org/recipe-No-005/)|passing short value from Java to C|
