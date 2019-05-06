@@ -1,14 +1,30 @@
-# jnicookbook
-JNI Cookbook samples
+[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/mkowsiak/jnicookbook/blob/master/LICENSE.md)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/mkowsiak/jnicookbook/blob/master/LICENSE.md)
+[![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
+# JNI Cookbook
 
-JNI Cookbook page can be found here: [JNI Cookbook](http://jnicookbook.owsiak.org)
+Inside this repository you can find JNI related codes that I have collected over years of working with JNI. You can also find a companion book, where I describe some topics in details.  JNI Cookbook page can be found here: [JNI Cookbook](http://jnicookbook.owsiak.org)
 
-This repository is a companion to a JNI Cook Book. You can find here all the samples used in the book.
+# Building and running
 
+The easiest way to build and run codes is to clone the repo and run all tests.
+
+    git clone https://github.com/mkowsiak/jnicookbook.git
     cd jnicookbook
     make all
     make test
     make clean
+    
+Remember that you can always run each and every sample separatelly. Simply call `make` inside given recipe. Let's say you want to run `recipeNo001`. All you have to do is to run
+
+    cd jnicookbook/recipeNo001
+    make
+    /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk...
+    ...
+    make test
+    /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk...
+    library: :./lib
+    Hello world!
 
 # Table of content
 
@@ -57,3 +73,4 @@ This repository is a companion to a JNI Cook Book. You can find here all the sam
 |recipe № 043|Settings environment variable inside JVM via JNI|
 |recipe № 044|Getting info (inside JNI code) regarding current thread using java.lang.Thread|
 |[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion (sample code)|
+[![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
