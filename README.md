@@ -91,4 +91,5 @@ At the moment, JNI Cookbook targets Linux and macOS. It should work on both plat
 |recipe № 043|Settings environment variable inside JVM via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo043)|
 |recipe № 044|Getting info (inside JNI code) regarding current thread using java.lang.Thread [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo044)|
 |[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion (sample code)|
+
 [![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
