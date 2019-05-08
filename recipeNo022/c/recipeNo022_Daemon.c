@@ -9,9 +9,9 @@
    In this sample, we simply fork and don't care about anything.
    /tmp must be available to the process
 */
-int demonize() {
-  int pid = fork();
-  switch ( pid ) {
+int demonize () {
+  int pid = fork ();
+  switch (pid) {
     case -1:
       return (-1);
     case 0:
@@ -23,41 +23,41 @@ int demonize() {
 }
 
 JNIEXPORT void JNICALL Java_recipeNo022_Daemon_demonize
-  (JNIEnv *env, jclass obj) {
+  (JNIEnv * env, jclass obj) {
 
-  /* JNI call will demonize the code and get back to Java */ 
-  int pid = demonize();
- 
+  /* JNI call will demonize the code and get back to Java */
+  int pid = demonize ();
+
   /* We want to make this long lasting loop inside daemon.
      That's why we check whether we are child or parent */
-  if( pid == 0 ) {
+  if (pid == 0) {
     /* Change the file mode mask */
-    umask(0);
-                
-    /* As we want to "see" the execution, there is a log file
-     inside /tmp/daemon. Each second, word "daemon" will
-     be appended to that file.
-    */
-    FILE *fid = fopen( "/tmp/daemon", "w" );
+    umask (0);
 
-               
+    /* As we want to "see" the execution, there is a log file
+       inside /tmp/daemon. Each second, word "daemon" will
+       be appended to that file.
+     */
+    FILE *fid = fopen ("/tmp/daemon", "w");
+
+
     /* Create a new SID for the child process */
-    int sid = setsid();
+    int sid = setsid ();
     if (sid < 0) {
       /* Log the failure */
-      exit(EXIT_FAILURE);
+      exit (EXIT_FAILURE);
     }
-        
+
     /* Change the current working directory */
-    if ((chdir("/")) < 0) {
+    if ((chdir ("/")) < 0) {
       /* Log the failure */
-      exit(EXIT_FAILURE);
+      exit (EXIT_FAILURE);
     }
-        
+
     /* Close out the standard file descriptors */
-    close(STDIN_FILENO);
-    close(STDOUT_FILENO);
-    close(STDERR_FILENO);
+    close (STDIN_FILENO);
+    close (STDOUT_FILENO);
+    close (STDERR_FILENO);
 
     /* Assign all files to /dev/null */
     open ("/dev/null", O_RDWR);
@@ -65,10 +65,10 @@ JNIEXPORT void JNICALL Java_recipeNo022_Daemon_demonize
     dup (0);
 
     /* Daemon loop */
-    while(1) {
-      sleep(1);
-      fprintf(fid, "I am daemon ;)\n");
-      fflush( fid );
+    while (1) {
+      sleep (1);
+      fprintf (fid, "I am daemon ;)\n");
+      fflush (fid);
     }
   }
 }
