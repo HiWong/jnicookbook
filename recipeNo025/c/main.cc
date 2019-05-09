@@ -4,20 +4,17 @@
 #include "Simple.h"
 
 /* This code will be called from C. It's marked as extern "C" */
-void testSimple() {
-  jni::Simple two( 2 );
-  two.showVal();
+void testSimple () {
+  jni::Simple two (2);
+  two.showVal ();
 }
 
 /* If you want to test it from CLI, go ahead */
-int main()
-{
-  jni::Simple one( 1 );
-  one.showVal();
+int main () {
+  jni::Simple one (1);
+  one.showVal ();
 
-  testSimple();
+  testSimple ();
 
   return 0;
 }
-
-

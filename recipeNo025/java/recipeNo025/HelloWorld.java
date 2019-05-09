@@ -13,13 +13,11 @@ public class HelloWorld {
 
   public static void main(String[] args) {
     /* This message will help you determine whether
-       LD_LIBRARY_PATH is correctly set */
+    LD_LIBRARY_PATH is correctly set */
 
-    System.out.println("library: " 
-      + System.getProperty("java.library.path"));
+    System.out.println("library: " + System.getProperty("java.library.path"));
 
     /* Call to shared library */
     HelloWorld.displayMessage();
   }
 }
-

@@ -5,13 +5,12 @@
 
 namespace jni {
   class Simple {
-    public:
-      Simple(int val);
-      void showVal();
-      ~Simple();
-    private:
-      int val;
+  public:
+    Simple (int val);
+    void showVal ();
+     ~Simple ();
+  private:
+    int val;
   };
 }
-
 #endif
