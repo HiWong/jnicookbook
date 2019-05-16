@@ -14,33 +14,32 @@ struct JVM {
 // We are storing it's pointer inside JVM structure.
 // This structure will be used (later on) while
 // creating threads.
-JNIEnv* create_vm(struct JVM *jvm)
-{
-    JNIEnv* env;
-    JavaVMInitArgs vm_args;
-    JavaVMOption options;
+JNIEnv *create_vm (struct JVM *jvm) {
+  JNIEnv *env;
+  JavaVMInitArgs vm_args;
+  JavaVMOption options;
 
-    // This one (java.class.path) is hardcoded, but I guess we could 
-    // make something better here. I simply assume that in sample codes
-    // main function will be called either from lib or from root directory
-    // of given sample code. It's possible to use some env variables here
-    // or to pass this value to main, but I don't care.
-    // This is just a sample. 
-    options.optionString = "-Djava.class.path=./target:../target";
+  // This one (java.class.path) is hardcoded, but I guess we could 
+  // make something better here. I simply assume that in sample codes
+  // main function will be called either from lib or from root directory
+  // of given sample code. It's possible to use some env variables here
+  // or to pass this value to main, but I don't care.
+  // This is just a sample. 
+  options.optionString = "-Djava.class.path=./target:../target";
 
-    vm_args.options = &options;
-    vm_args.ignoreUnrecognized = 0;
-    vm_args.version = JNI_VERSION_1_8;
-    vm_args.nOptions = 1;
+  vm_args.options = &options;
+  vm_args.ignoreUnrecognized = 0;
+  vm_args.version = JNI_VERSION_1_8;
+  vm_args.nOptions = 1;
 
-    // I don't care about supper duper error handling here
-    // in case we can't make it to create JVM. If JVM fails, just boil down.
-    int status = JNI_CreateJavaVM(&jvm->jvm, (void**)&env, &vm_args);
-    if (status < 0 || !env) {
-        printf("Error\n");
-	return NULL;
-    }
-    return env;
+  // I don't care about supper duper error handling here
+  // in case we can't make it to create JVM. If JVM fails, just boil down.
+  int status = JNI_CreateJavaVM (&jvm->jvm, (void **) &env, &vm_args);
+  if (status < 0 || !env) {
+    printf ("Error\n");
+    return NULL;
+  }
+  return env;
 }
 
 // We are calling method "fun" from class
@@ -50,38 +49,37 @@ JNIEnv* create_vm(struct JVM *jvm)
 // 
 // Please, make sure to use "/" as package separator
 // in FindClass method using "." will not work here.
-void invoke_class(JNIEnv* env)
-{
-    jclass Main_class;
-    jmethodID fun_id;
-    jclass Main_class_no_package;
-    jmethodID fun_id_no_package;
+void invoke_class (JNIEnv * env) {
+  jclass Main_class;
+  jmethodID fun_id;
+  jclass Main_class_no_package;
+  jmethodID fun_id_no_package;
 
-    // This is the place where we are looking for class
-    // and it's method.
-    Main_class = (*env)->FindClass(env, "recipeNo028/Main");
-    Main_class_no_package = (*env)->FindClass(env, "Main");
-    fun_id = (*env)->GetStaticMethodID(env, Main_class, "fun", "()I");
-    fun_id_no_package = (*env)->GetStaticMethodID(env, Main_class_no_package, "fun", "()I");
-    
-    // This is the place where we call the method
-    (*env)->CallStaticIntMethod(env, Main_class, fun_id);
-    (*env)->CallStaticIntMethod(env, Main_class_no_package, fun_id_no_package);
+  // This is the place where we are looking for class
+  // and it's method.
+  Main_class = (*env)->FindClass (env, "recipeNo028/Main");
+  Main_class_no_package = (*env)->FindClass (env, "Main");
+  fun_id = (*env)->GetStaticMethodID (env, Main_class, "fun", "()I");
+  fun_id_no_package =
+    (*env)->GetStaticMethodID (env, Main_class_no_package, "fun", "()I");
+
+  // This is the place where we call the method
+  (*env)->CallStaticIntMethod (env, Main_class, fun_id);
+  (*env)->CallStaticIntMethod (env, Main_class_no_package, fun_id_no_package);
 }
 
 // main, just main
-int main(int argc, char **argv)
-{
-    // First of all, let's try to create JVM
-    struct JVM myJvm;
-    JNIEnv *myEnv = create_vm(&myJvm);
+int main (int argc, char **argv) {
+  // First of all, let's try to create JVM
+  struct JVM myJvm;
+  JNIEnv *myEnv = create_vm (&myJvm);
 
-    if(myEnv == NULL)
-        return 1;
+  if (myEnv == NULL)
+    return 1;
 
-    invoke_class(myEnv);
+  invoke_class (myEnv);
 
-    // Make sure to release JVM at the very end!!
-    (*myJvm.jvm)->DestroyJavaVM(myJvm.jvm);
+  // Make sure to release JVM at the very end!!
+  (*myJvm.jvm)->DestroyJavaVM (myJvm.jvm);
 
 }
