@@ -11,13 +11,11 @@ public class Main {
     /* This message will help you determine whether
        LD_LIBRARY_PATH is correctly set
     */
-    System.out.println("library: " 
-      + System.getProperty("java.library.path"));
+    System.out.println("library: " + System.getProperty("java.library.path"));
 
     /* Call to shared library */
     Main main = new Main();
-    main.display( new HelloWorldNativeA() );
-    main.display( new HelloWorldNativeB() );
+    main.display(new HelloWorldNativeA());
+    main.display(new HelloWorldNativeB());
   }
 }
-

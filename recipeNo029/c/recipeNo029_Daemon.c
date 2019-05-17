@@ -9,9 +9,9 @@
    In this sample, we simply fork and don't care about anything.
    /tmp must be available to the process
 */
-int demonize() {
-  int pid = fork();
-  switch ( pid ) {
+int demonize () {
+  int pid = fork ();
+  switch (pid) {
     case -1:
       return (-1);
     case 0:
@@ -23,10 +23,10 @@ int demonize() {
 }
 
 JNIEXPORT int JNICALL Java_recipeNo029_Daemon_demonize
-  (JNIEnv *env, jclass obj) {
+  (JNIEnv * env, jclass obj) {
 
-  /* JNI call will demonize the code and get back to Java */ 
-  int pid = demonize();
+  /* JNI call will demonize the code and get back to Java */
+  int pid = demonize ();
 
   /* Based on pid value, Java will either become daemon
      or will quit execution
@@ -34,28 +34,28 @@ JNIEXPORT int JNICALL Java_recipeNo029_Daemon_demonize
      !0 - means we are oryginal code
 
      if we are daemon, we can make all the mainteanance here
-  */
-  if( pid == 0 ) {
+   */
+  if (pid == 0) {
     /* Change the file mode mask */
-    umask(0);
+    umask (0);
 
     /* Create a new SID for the child process */
-    int sid = setsid();
+    int sid = setsid ();
     if (sid < 0) {
       /* Log the failure */
-      exit(EXIT_FAILURE);
+      exit (EXIT_FAILURE);
     }
 
     /* Change the current working directory */
-    if ((chdir("/")) < 0) {
+    if ((chdir ("/")) < 0) {
       /* Log the failure */
-      exit(EXIT_FAILURE);
+      exit (EXIT_FAILURE);
     }
 
     /* Close out the standard file descriptors */
-    close(STDIN_FILENO);
-    close(STDOUT_FILENO);
-    close(STDERR_FILENO);
+    close (STDIN_FILENO);
+    close (STDOUT_FILENO);
+    close (STDERR_FILENO);
 
     /* Assign all files to /dev/null */
     open ("/dev/null", O_RDWR);
@@ -63,5 +63,5 @@ JNIEXPORT int JNICALL Java_recipeNo029_Daemon_demonize
     dup (0);
   }
   return pid;
- 
+
 }

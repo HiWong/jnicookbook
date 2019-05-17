@@ -2,7 +2,7 @@
 #include "recipeNo030_HelloWorldNativeB.h"
 
 JNIEXPORT void JNICALL Java_recipeNo030_HelloWorldNativeB_displayMessage
-  (JNIEnv *env, jobject obj) {
+  (JNIEnv * env, jobject obj) {
 
-        printf("NativeB\n");
+  printf ("NativeB\n");
 }
