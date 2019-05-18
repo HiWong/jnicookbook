@@ -21,8 +21,6 @@ public class HelloWorld {
   // and call native method declared above
   public void callNativeMethod() {
     System.load(libFileLocation);
-    displayMessage(); 
+    displayMessage();
   }
-
 }
-

@@ -8,15 +8,15 @@ public class HelloWorldJNA {
   public interface CTest extends Library {
     public void displayMessageJNA();
   }
- 
-  static public void main(String args[]) {
+
+  public static void main(String args[]) {
     // just some value out of the blue ;)
     int iterations = 44;
 
-    if( args.length == 1 ) {
+    if (args.length == 1) {
       try {
         iterations = Integer.parseInt(args[0]);
-      } catch(Exception ex) {
+      } catch (Exception ex) {
         // I will print stack trace and proceed anyway
         // I don't care whether input is lousy or not
         ex.printStackTrace();
@@ -27,7 +27,7 @@ public class HelloWorldJNA {
 
     /* Call to shared library */
     long t_start = System.currentTimeMillis();
-    for(int i=0;i<iterations;i++) {
+    for (int i = 0; i < iterations; i++) {
       ctest.displayMessageJNA();
     }
     long t_end = System.currentTimeMillis();
@@ -35,4 +35,3 @@ public class HelloWorldJNA {
     System.out.println("JNA:     " + (t_end - t_start));
   }
 }
-

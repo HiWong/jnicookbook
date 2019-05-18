@@ -3,8 +3,8 @@
 #include "recipeNo033_HelloWorldJNI.h"
 
 JNIEXPORT void JNICALL Java_recipeNo033_HelloWorldJNI_displayMessageJNI
-  (JNIEnv *env, jclass obj) {
+  (JNIEnv * env, jclass obj) {
 
-	printf("Hello world!\n");
+  printf ("Hello world!\n");
 
 }

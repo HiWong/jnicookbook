@@ -21,7 +21,7 @@ public class Main {
     try {
       // Create temporary file
       File file = File.createTempFile("libHelloWorld", ".lib");
-       
+
       // In case it worked, we can extract lib
       if (file.exists()) {
         // First of all, let's show where do we plan to extract it
@@ -33,18 +33,20 @@ public class Main {
         // We want to overwrite existing file. This is why we are using
         //
         // java.nio.file.StandardCopyOption.REPLACE_EXISTING
-        Files.copy(link, file.getAbsoluteFile().toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(
+            link,
+            file.getAbsoluteFile().toPath(),
+            java.nio.file.StandardCopyOption.REPLACE_EXISTING);
         return file.getAbsoluteFile().toPath().toString();
       }
       // In case something goes wrong, we will simply return null
       return null;
 
-    } catch(IOException e) {
+    } catch (IOException e) {
       // The same goes for exception - we are passing null back
       e.printStackTrace();
       return null;
     }
-
   }
 
   /*
@@ -52,16 +54,16 @@ public class Main {
     - extracts library from JAR
     - calls native method declared inside HelloWorld class
   */
-  public static void main(String [] arg) {
+  public static void main(String[] arg) {
 
-    // First of all, we need to extrac library file 
+    // First of all, we need to extrac library file
     Main main = new Main();
     String libLocation = main.extractLibrary();
- 
+
     // Once it is extracted, we can call native code
     // We are passing library location as argument
     // for HelloWorld constructor
-    if(libLocation != null) {
+    if (libLocation != null) {
       HelloWorld helloWorld = new HelloWorld(libLocation);
       helloWorld.callNativeMethod();
     }

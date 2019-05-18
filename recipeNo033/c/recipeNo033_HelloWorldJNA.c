@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-void displayMessageJNA() {
+void displayMessageJNA () {
 
-        printf("Hello world!\n");
+  printf ("Hello world!\n");
 
 }

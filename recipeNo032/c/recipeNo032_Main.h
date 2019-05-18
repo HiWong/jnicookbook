@@ -12,8 +12,7 @@ extern "C" {
  * Method:    callmeback
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_recipeNo032_Main_callmeback
-  (JNIEnv *, jobject);
+  JNIEXPORT void JNICALL Java_recipeNo032_Main_callmeback (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
