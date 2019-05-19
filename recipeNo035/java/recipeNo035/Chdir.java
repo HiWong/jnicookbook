@@ -23,8 +23,6 @@ public class Chdir {
   // and call native method declared above
   public void callNativeMethod() {
     System.load(libFileLocation);
-    chdirwrapper(workdir); 
+    chdirwrapper(workdir);
   }
-
 }
-

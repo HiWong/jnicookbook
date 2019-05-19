@@ -13,27 +13,24 @@ import java.nio.file.Files;
 */
 public class Main {
 
-  public static File createTempDirectory()
-    throws IOException {
+  public static File createTempDirectory() throws IOException {
 
     final File temp;
     temp = File.createTempFile("temp", Long.toString(System.nanoTime()));
 
-    if(!(temp.delete()))
-    {
-        throw new IOException("Could not delete temp file: " + temp.getAbsolutePath());
+    if (!(temp.delete())) {
+      throw new IOException("Could not delete temp file: " + temp.getAbsolutePath());
     }
 
-    if(!(temp.mkdir()))
-    {
-        throw new IOException("Could not create temp directory: " + temp.getAbsolutePath());
+    if (!(temp.mkdir())) {
+      throw new IOException("Could not create temp directory: " + temp.getAbsolutePath());
     }
 
     File subdir = new File(temp.getAbsolutePath() + File.separator + "lib");
 
-    if(!(subdir.mkdir()))
-    {
-        throw new IOException("Could not create temp directory: " + temp.getAbsolutePath() + File.separator + "lib" );
+    if (!(subdir.mkdir())) {
+      throw new IOException(
+          "Could not create temp directory: " + temp.getAbsolutePath() + File.separator + "lib");
     }
 
     return subdir;
@@ -46,7 +43,8 @@ public class Main {
   private String extractLibrary(File location, String name, String ext) {
     try {
 
-      File tmpFile = new File(location.getAbsoluteFile().toPath() + File.separator + name + "." + ext);
+      File tmpFile =
+          new File(location.getAbsoluteFile().toPath() + File.separator + name + "." + ext);
 
       try {
         tmpFile.createNewFile();
@@ -65,14 +63,17 @@ public class Main {
         // We want to overwrite existing file. This is why we are using
         //
         // java.nio.file.StandardCopyOption.REPLACE_EXISTING
-        Files.copy(link, tmpFile.getAbsoluteFile().toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(
+            link,
+            tmpFile.getAbsoluteFile().toPath(),
+            java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
         return tmpFile.getAbsoluteFile().toPath().toString();
       }
       // In case something goes wrong, we will simply return null
       return null;
 
-    } catch(IOException e) {
+    } catch (IOException e) {
       // The same goes for exception - we are passing null back
       e.printStackTrace();
       return null;
@@ -84,13 +85,13 @@ public class Main {
     - extracts library from JAR
     - calls native method declared inside HelloWorld class
   */
-  public static void main(String [] arg) {
+  public static void main(String[] arg) {
 
     File tmp = null;
     // Create temporaryDirectory
     try {
       tmp = Main.createTempDirectory();
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       ex.printStackTrace();
     }
 
@@ -101,15 +102,16 @@ public class Main {
     String libChdirLocation = main.extractLibrary(tmp, "libChdir", "so");
 
     // Make sure to change dir where lib dir is
-    if(libLocation != null) {
-      Chdir chdir = new Chdir(libChdirLocation, tmp.getAbsoluteFile().toPath().toString().replace("lib","") );
+    if (libLocation != null) {
+      Chdir chdir =
+          new Chdir(libChdirLocation, tmp.getAbsoluteFile().toPath().toString().replace("lib", ""));
       chdir.callNativeMethod();
     }
- 
+
     // Once it is extracted, we can call native code
     // We are passing library location as argument
     // for HelloWorld constructor
-    if(libLocation != null) {
+    if (libLocation != null) {
       HelloWorld helloWorld = new HelloWorld(libLocation);
       helloWorld.callNativeMethod();
     }

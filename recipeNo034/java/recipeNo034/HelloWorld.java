@@ -2,7 +2,7 @@
 package recipeNo034;
 
 /* In this sample we call native code from both - enclosing class
-   and inner class. Pay attention to method signatures in 
+   and inner class. Pay attention to method signatures in
    native code!
 */
 
@@ -43,6 +43,5 @@ public class HelloWorld {
     HelloWorld hw = new HelloWorld();
     hw.displayMessage();
     hw.callDisplayMessageFromInnerClass();
- } 
+  }
 }
-
