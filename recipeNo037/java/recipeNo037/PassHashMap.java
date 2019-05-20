@@ -17,8 +17,7 @@ public class PassHashMap {
     /* This message will help you determine whether
        LD_LIBRARY_PATH is correctly set
     */
-    System.out.println("library: " 
-      + System.getProperty("java.library.path"));
+    System.out.println("library: " + System.getProperty("java.library.path"));
 
     /* Create object to pass */
     HashMap<String, String> map = new HashMap<String, String>();
@@ -30,4 +29,3 @@ public class PassHashMap {
     PassHashMap.displayHashMap(map);
   }
 }
-

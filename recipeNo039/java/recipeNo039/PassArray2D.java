@@ -10,8 +10,8 @@ public class PassArray2D {
   static {
     System.loadLibrary("PassArray2D");
   }
- 
-  private double [][] doubleData = { {0,1}, {2,3}, {4,5} };
+
+  private double[][] doubleData = {{0, 1}, {2, 3}, {4, 5}};
 
   public double[][] getDoubleData() {
     return doubleData;
@@ -21,11 +21,9 @@ public class PassArray2D {
     /* This message will help you determine whether
        LD_LIBRARY_PATH is correctly set
     */
-    System.out.println("library: " 
-      + System.getProperty("java.library.path"));
- 
+    System.out.println("library: " + System.getProperty("java.library.path"));
+
     PassArray2D obj = new PassArray2D();
     obj.displayArray2D();
   }
 }
-

@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class PassHashMap {
 
   /* This is the native method we want to call */
-  public static native int displayHashMap(String [] keys, String [] values);
+  public static native int displayHashMap(String[] keys, String[] values);
 
   /* Inside static block we will load shared library */
   static {
@@ -17,8 +17,7 @@ public class PassHashMap {
     /* This message will help you determine whether
        LD_LIBRARY_PATH is correctly set
     */
-    System.out.println("library: " 
-      + System.getProperty("java.library.path"));
+    System.out.println("library: " + System.getProperty("java.library.path"));
 
     /* Create object to pass */
     HashMap<String, String> map = new HashMap<String, String>();
@@ -30,7 +29,7 @@ public class PassHashMap {
     String[] keys = map.keySet().toArray(new String[0]);
     String[] values = new String[keys.length];
     int idx = 0;
-    for( String key : keys ) {
+    for (String key : keys) {
       values[idx++] = map.get(key);
     }
 
@@ -38,4 +37,3 @@ public class PassHashMap {
     PassHashMap.displayHashMap(keys, values);
   }
 }
-
