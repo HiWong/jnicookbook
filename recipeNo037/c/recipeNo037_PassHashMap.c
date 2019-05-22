@@ -58,9 +58,8 @@ JNIEXPORT int JNICALL Java_recipeNo037_PassHashMap_displayHashMap
     const char *c_string_key = (*env)->GetStringUTFChars (env, objKey, 0);
 
     /* Once we have key, we can retrieve value for that key */
-    jmethodID midGet =
-      (*env)->GetMethodID (env, clsHashMap, "get",
-                           "(Ljava/lang/Object;)Ljava/lang/Object;");
+    jmethodID midGet = (*env)->GetMethodID (env, clsHashMap, "get",
+                                            "(Ljava/lang/Object;)Ljava/lang/Object;");
 
 
     /* We have to make sure that method exists */

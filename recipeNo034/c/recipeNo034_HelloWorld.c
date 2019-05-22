@@ -11,8 +11,7 @@ JNIEXPORT void JNICALL Java_recipeNo034_HelloWorld_displayMessage
 }
 
 JNIEXPORT void JNICALL
-  Java_recipeNo034_HelloWorld_00024NativeWrapper_displayMessage (JNIEnv * env,
-                                                                 jobject obj)
-{
+Java_recipeNo034_HelloWorld_00024NativeWrapper_displayMessage (JNIEnv * env,
+                                                               jobject obj) {
   printf ("Hello world from inner class!\n");
 }

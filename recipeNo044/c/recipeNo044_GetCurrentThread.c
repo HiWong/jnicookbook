@@ -14,9 +14,8 @@ JNIEXPORT void JNICALL Java_recipeNo044_GetCurrentThread_displayMessage
      public static native java.lang.Thread currentThread();
      descriptor: ()Ljava/lang/Thread; 
    */
-  jmethodID mid =
-    (*env)->GetStaticMethodID (env, cls, "currentThread",
-                               "()Ljava/lang/Thread;");
+  jmethodID mid = (*env)->GetStaticMethodID (env, cls, "currentThread",
+                                             "()Ljava/lang/Thread;");
 
   // Once you have method, you can call it. Remember that result is
   // a jobject 

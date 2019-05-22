@@ -4,8 +4,8 @@
 #include "recipeNo014_CreateArray.h"
 
 JNIEXPORT jbooleanArray JNICALL
-  Java_recipeNo014_CreateArray_createBooleanArray (JNIEnv * env, jclass obj,
-                                                   int size) {
+Java_recipeNo014_CreateArray_createBooleanArray (JNIEnv * env, jclass obj,
+                                                 int size) {
 
   //create array that will be passed back to Java
   jbooleanArray array = (jbooleanArray) (*env)->NewBooleanArray (env, size);

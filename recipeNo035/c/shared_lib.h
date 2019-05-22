@@ -1,1 +1,1 @@
-void messageFromSharedLib();
+void messageFromSharedLib ();
