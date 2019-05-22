@@ -3,69 +3,65 @@
 #include "recipeNo044_GetCurrentThread.h"
 
 JNIEXPORT void JNICALL Java_recipeNo044_GetCurrentThread_displayMessage
-                (JNIEnv * env, jclass obj) {
+  (JNIEnv * env, jclass obj) {
 
   // First, we have to find Thread class
-  jclass cls = (*env)->FindClass(env, "java/lang/Thread");
+  jclass cls = (*env)->FindClass (env, "java/lang/Thread");
 
   // Then, we can look for it's static method 'currentThread'
   /* Remember that you can always get method signature using javap tool
-       > javap -s -p java.lang.Thread | grep -A 1 currentThread
-           public static native java.lang.Thread currentThread();
-             descriptor: ()Ljava/lang/Thread; 
-  */
-  jmethodID mid = 
-    (*env)->GetStaticMethodID(env, cls, "currentThread", "()Ljava/lang/Thread;"); 
- 
+     > javap -s -p java.lang.Thread | grep -A 1 currentThread
+     public static native java.lang.Thread currentThread();
+     descriptor: ()Ljava/lang/Thread; 
+   */
+  jmethodID mid =
+    (*env)->GetStaticMethodID (env, cls, "currentThread",
+                               "()Ljava/lang/Thread;");
+
   // Once you have method, you can call it. Remember that result is
   // a jobject 
-  jobject thread = (*env)->CallStaticObjectMethod(env, cls, mid);
-  if( thread == NULL ) {
-    printf("Error while calling static method: currentThread\n");
+  jobject thread = (*env)->CallStaticObjectMethod (env, cls, mid);
+  if (thread == NULL) {
+    printf ("Error while calling static method: currentThread\n");
   }
-
   // Now, we have to find another method - 'getId'
   /* Remember that you can always get method signature using javap tool
-       > javap -s -p java.lang.Thread | grep -A 1 getId
-           public long getId();
-             descriptor: ()Jjavap -s -p java.lang.Thread | grep -A 1 currentThread
-  */
-  jmethodID mid_getid = 
-    (*env)->GetMethodID(env, cls, "getId", "()J"); 
-  if( mid_getid == NULL ) {
-    printf("Error while calling GetMethodID for: getId\n");
+     > javap -s -p java.lang.Thread | grep -A 1 getId
+     public long getId();
+     descriptor: ()Jjavap -s -p java.lang.Thread | grep -A 1 currentThread
+   */
+  jmethodID mid_getid = (*env)->GetMethodID (env, cls, "getId", "()J");
+  if (mid_getid == NULL) {
+    printf ("Error while calling GetMethodID for: getId\n");
   }
- 
   // This time, we are calling instance method, note the difference
   // in Call... method 
-  jlong tid = (*env)->CallLongMethod(env, thread, mid_getid);
+  jlong tid = (*env)->CallLongMethod (env, thread, mid_getid);
 
   // Finally, let's call 'getName' of Thread object
   /* Remember that you can always get method signature using javap tool
-       > javap -s -p java.lang.Thread | grep -A 1 getName
-           public final java.lang.String getName();
-             descriptor: ()Ljava/lang/String;
-  */
-  jmethodID mid_getname = 
-    (*env)->GetMethodID(env, cls, "getName", "()Ljava/lang/String;"); 
+     > javap -s -p java.lang.Thread | grep -A 1 getName
+     public final java.lang.String getName();
+     descriptor: ()Ljava/lang/String;
+   */
+  jmethodID mid_getname =
+    (*env)->GetMethodID (env, cls, "getName", "()Ljava/lang/String;");
 
-  if( mid_getname == NULL ) {
-    printf("Error while calling GetMethodID for: getName\n");
+  if (mid_getname == NULL) {
+    printf ("Error while calling GetMethodID for: getName\n");
   }
- 
   // As above, we are calling instance method 
-  jobject tname = (*env)->CallObjectMethod(env, thread, mid_getname);
+  jobject tname = (*env)->CallObjectMethod (env, thread, mid_getname);
 
   // Remember to retrieve characters from String object
   const char *c_str;
-  c_str = (*env)->GetStringUTFChars(env, tname, NULL);
-  if(c_str == NULL) {
+  c_str = (*env)->GetStringUTFChars (env, tname, NULL);
+  if (c_str == NULL) {
     return;
   }
-
   // display message from JNI
-  printf("[C   ] name: %s id: %ld\n", c_str, tid);
+  printf ("[C   ] name: %s id: %ld\n", c_str, tid);
 
   // and make sure to release allocated memory before leaving JNI
-  (*env)->ReleaseStringUTFChars(env, tname, c_str);
+  (*env)->ReleaseStringUTFChars (env, tname, c_str);
 }

@@ -18,10 +18,11 @@ public class GetCurrentThread {
     System.out.println("library: " + System.getProperty("java.library.path"));
 
     /* Call to shared library */
-    System.out.println(   "[Java] name: " 
-                        + Thread.currentThread().getName() 
-                        + " id: " 
-                        + Thread.currentThread().getId() );
+    System.out.println(
+        "[Java] name: "
+            + Thread.currentThread().getName()
+            + " id: "
+            + Thread.currentThread().getId());
     GetCurrentThread.displayMessage();
   }
 }

@@ -5,34 +5,34 @@
 #define BUFFER_SIZE 44
 
 JNIEXPORT int JNICALL Java_recipeNo040_PassByteBuffer_displayByteBuffer
-  (JNIEnv *env, jclass obj, jobject objarg) {
-	
+  (JNIEnv * env, jclass obj, jobject objarg) {
+
   /* Get objarg's class - objarg is the one we pass from
      Java */
-  jclass clsByteBuffer = (*env)->GetObjectClass(env, objarg); 
+  jclass clsByteBuffer = (*env)->GetObjectClass (env, objarg);
 
   /* Remember that you can alway get method signature using javap tool
      > javap -s -p java.nio.ByteBuffer | grep -A 1 get
      ...
      --
-       public abstract byte get(int);
-      descriptor: (I)B
+     public abstract byte get(int);
+     descriptor: (I)B
      --
      ...
-  */
-  
-  jmethodID midGetByte = 
-    (*env)->GetMethodID(env, clsByteBuffer, "get", "(I)B"); 
+   */
+
+  jmethodID midGetByte =
+    (*env)->GetMethodID (env, clsByteBuffer, "get", "(I)B");
 
   /* We have to make sure that method exists */
   if (midGetByte == NULL) {
-    return -1; /* method not found */ 
-  } 
+    return -1;                  /* method not found */
+  }
 
   /* Now, it's time to get some values */
-  for(int i=0; i<BUFFER_SIZE; i++) {
-    jbyte byteValue = (*env)->CallByteMethod(env, objarg, midGetByte, i);
-    printf("%d\n", byteValue); 
+  for (int i = 0; i < BUFFER_SIZE; i++) {
+    jbyte byteValue = (*env)->CallByteMethod (env, objarg, midGetByte, i);
+    printf ("%d\n", byteValue);
   }
 
   return 0;
@@ -40,13 +40,13 @@ JNIEXPORT int JNICALL Java_recipeNo040_PassByteBuffer_displayByteBuffer
 }
 
 JNIEXPORT int JNICALL Java_recipeNo040_PassByteBuffer_displayDirectByteBuffer
-  (JNIEnv *env, jclass obj, jobject objarg) {
+  (JNIEnv * env, jclass obj, jobject objarg) {
 
-  jbyte *buff = (jbyte *) (*env)->GetDirectBufferAddress(env, objarg );
-	
+  jbyte *buff = (jbyte *) (*env)->GetDirectBufferAddress (env, objarg);
+
   /* Now, it's time to get some values */
-  for(int i=0; i<BUFFER_SIZE; i++) {
-    printf("%d\n", buff[i]); 
+  for (int i = 0; i < BUFFER_SIZE; i++) {
+    printf ("%d\n", buff[i]);
   }
 
   return 0;

@@ -10,6 +10,4 @@ public class GetEnv {
   static {
     System.loadLibrary("getenv");
   }
-
 }
-

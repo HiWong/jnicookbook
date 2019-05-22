@@ -10,6 +10,4 @@ public class SetEnv {
   static {
     System.loadLibrary("setenv");
   }
-
 }
-

@@ -7,8 +7,7 @@ public class Main {
     /* This message will help you determine whether
        LD_LIBRARY_PATH is correctly set
     */
-    System.out.println("library: " 
-			+ System.getProperty("java.library.path"));
+    System.out.println("library: " + System.getProperty("java.library.path"));
 
     SetEnv setEnv = new SetEnv();
     GetEnv getEnv = new GetEnv();
@@ -16,17 +15,14 @@ public class Main {
     java.lang.String key = "hello";
     java.lang.String value = "world";
 
-
     // Make sure you have exported variable before calling
     // getenv for the first time. This way, you will get
     // the value coming from environment
-    getEnv.getenv( key );
+    getEnv.getenv(key);
 
-    // After we have modified it, shared library will 
+    // After we have modified it, shared library will
     // use new value, modified by call to setenv
-    setEnv.setenv( key, value );
-    getEnv.getenv( key );
-
+    setEnv.setenv(key, value);
+    getEnv.getenv(key);
   }
 }
-
