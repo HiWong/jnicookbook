@@ -2,7 +2,7 @@ include ../Makefile.common
 
 ifeq ($(ARCH),darwin)
 CC=llvm-gcc
-MAC_OS_FLAGS=-rpath ${JAVA_HOME}/lib/server -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -demangle -dynamic -arch x86_64 -macosx_version_min 10.13.0 -lSystem
+MAC_OS_FLAGS=-rpath ${JAVA_HOME}/jre/lib/server -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -demangle -dynamic -arch x86_64 -macosx_version_min 10.13.0 -lSystem
 else
 CC=gcc
 MAC_OS_FLAGS=
@@ -20,7 +20,7 @@ recipeNo028_main.o: c/recipeNo028_main.c
     	-I${JAVA_HOME}/include/$(ARCH) \
 
 main: recipeNo028_main.o
-	ld -o lib/recipeNo028_main -L${JAVA_HOME}/lib/server/ \
+	ld -o lib/recipeNo028_main -L${JAVA_HOME}/jre/lib/server/ \
 	-ljvm \
         $(MAC_OS_FLAGS) \
 	lib/recipeNo028_main.o
