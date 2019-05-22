@@ -1,7 +1,6 @@
 /* HelloWorldJNI.java */
 package recipeNo033;
 
-
 public class HelloWorldJNI {
 
   /* This is the native method we want to call */

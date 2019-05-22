@@ -15,8 +15,7 @@ public class SigTerm {
     /* This message will help you determine whether
         LD_LIBRARY_PATH is correctly set
     */
-    System.out.println("library: " 
-      + System.getProperty("java.library.path"));
+    System.out.println("library: " + System.getProperty("java.library.path"));
 
     /* Call to shared library */
     try {
@@ -24,10 +23,9 @@ public class SigTerm {
       // JNI will throw exception when exit function is called.
       System.out.println("Calling riskyCode() with atexit based handler");
       SigTerm.callExitCode();
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       // We will end up here catching exception produced by JNI.
       System.out.println("Exception - application tried to call exit");
     }
   }
 }
-

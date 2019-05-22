@@ -1,7 +1,6 @@
 /* HelloWorldProcess.java */
 package recipeNo033;
 
-
 public class HelloWorldProcess {
 
   public static void main(String[] args) throws Exception {
