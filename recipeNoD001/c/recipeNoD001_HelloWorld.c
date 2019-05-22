@@ -8,19 +8,21 @@
  */
 
 JNIEXPORT int JNICALL Java_recipeNoD001_HelloWorld_displayMessage
-  (JNIEnv *env, jclass obj, int value) {
+  (JNIEnv * env, jclass obj, int value) {
 
-    // we will increase counter each time we leave the function
-    // note that we can't trace static variable value even though it's
-    // accessible from LLDB console
-    static int counter = 0;
+  // we will increase counter each time we leave the function
+  // note that we can't trace static variable value even though it's
+  // accessible from LLDB console
+  static int counter = 0;
 
-    // we will print current values of _value_ so we can trace execution
-    printf("Hello world from CLion! Current values of [value: %d] [counter: %d]\n", value, counter);
+  // we will print current values of _value_ so we can trace execution
+  printf
+    ("Hello world from CLion! Current values of [value: %d] [counter: %d]\n",
+     value, counter);
 
-    // increase values; we will pass value back to Java
-	value ++;
-    counter ++;
-	return value;
+  // increase values; we will pass value back to Java
+  value++;
+  counter++;
+  return value;
 
 }
