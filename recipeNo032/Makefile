@@ -2,7 +2,7 @@ include ../Makefile.common
 
 ifeq ($(ARCH),darwin)
 CC=cc
-FLAGS=-I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -L${JAVA_HOME}/lib/server -ljvm -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -dynamic -arch x86_64 -lSystem -lpthread
+FLAGS=-I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -L${JAVA_HOME}/jre/lib/server -ljvm -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -dynamic -arch x86_64 -lSystem -lpthread
 else
 CC=cc
 FLAGS=-I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -L${JAVA_HOME}/jre/lib/amd64/server -ljvm -lpthread
@@ -22,4 +22,5 @@ test:
 clean:
 	-rm -rfv target/*
 	-rm -rf lib/*
+	-rm c/recipeNo032_Main.h
 
