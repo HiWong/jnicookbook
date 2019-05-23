@@ -1,5 +1,16 @@
 include ../Makefile.common
 
+RECIPE=./recipeNo033
+ifneq "$(wildcard $(RECIPE) )" ""
+  RECIPE_LOCATION=recipeNo033
+else
+  RECIPE_LOCATION=
+endif
+
+.PHONY:
+	@echo $(RECIPE_LOCATION)
+	@echo $(wildcard $(RECIPE) )
+
 all: compilejava compilec
 
 compilec:
@@ -15,7 +26,7 @@ compilejava:
 test: testprocess testjni testjna
 
 testprocess:
-	$(JAVA_HOME)/bin/java -Drecipe033=$(PWD)/lib/ -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo033.HelloWorldProcess $(RECIPE_NO_033_ITER)
+	$(JAVA_HOME)/bin/java -Drecipe033=$(RECIPENO33) -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo033.HelloWorldProcess $(RECIPE_NO_033_ITER)
 
 testjni:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo033.HelloWorldJNI $(RECIPE_NO_033_ITER)

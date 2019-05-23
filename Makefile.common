@@ -22,6 +22,16 @@ else
   JAVA_SERVER_LIB=${JAVA_HOME}/lib/server
 endif
 
+# We have to tweak recipeNo033 location so we can run
+# it wither from recipeNo033 or from one level above
+RECIPENO33=$(PWD)/recipeNo033
+ifneq "$(wildcard $(RECIPENO33) )" ""
+  RECIPENO33=$(PWD)/recipeNo033/lib/
+else
+  RECIPENO33=$(PWD)/lib/
+endif
+
+
 # depending on architecture we have to set linker settings
 # while linking with libjvm.so/libjvm.dylib
 # Be careful with mac os!!
