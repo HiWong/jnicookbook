@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <jni.h>
+#include "jni.h"
 #include <pthread.h>
 #include "recipeNo032_Main.h"
 

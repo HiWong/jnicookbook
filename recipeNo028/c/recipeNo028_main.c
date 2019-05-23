@@ -28,15 +28,15 @@ JNIEnv *create_vm (struct JVM *jvm) {
   options.optionString = "-Djava.class.path=./target:../target";
 
   vm_args.options = &options;
+  vm_args.nOptions = 1;
   vm_args.ignoreUnrecognized = 0;
   vm_args.version = JNI_VERSION_1_8;
-  vm_args.nOptions = 1;
 
   // I don't care about supper duper error handling here
   // in case we can't make it to create JVM. If JVM fails, just boil down.
   int status = JNI_CreateJavaVM (&jvm->jvm, (void **) &env, &vm_args);
   if (status < 0 || !env) {
-    printf ("Error\n");
+    printf ("Error: %d\n", status);
     return NULL;
   }
   return env;
@@ -58,6 +58,8 @@ void invoke_class (JNIEnv * env) {
   // This is the place where we are looking for class
   // and it's method.
   Main_class = (*env)->FindClass (env, "recipeNo028/Main");
+  if(Main_class == NULL)
+    return;
   Main_class_no_package = (*env)->FindClass (env, "Main");
   fun_id = (*env)->GetStaticMethodID (env, Main_class, "fun", "()I");
   fun_id_no_package =
