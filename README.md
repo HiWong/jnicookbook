@@ -27,6 +27,10 @@ Remember that you can always run each and every sample separatelly. Simply call 
     /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk...
     library: :./lib
     Hello world!
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/compile.gif">
+</p>
     
 # Ready for Java 12 and onwards
 
