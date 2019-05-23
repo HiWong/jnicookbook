@@ -30,7 +30,7 @@ Remember that you can always run each and every sample separatelly. Simply call 
     
 # Ready for Java 12 and onwards
 
-JNI Cookbook samples were adapted to Java 10 release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with Java 8 - for any reasons - you should be able to use samples as well.
+JNI Cookbook samples were adapted to Java 12 release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with Java 8 - for any reasons - you should be able to use samples as well.
 
 JNI Cookbook samples were tested with:
 
