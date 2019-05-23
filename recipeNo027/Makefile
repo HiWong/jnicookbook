@@ -1,6 +1,6 @@
 include ../Makefile.common
 
-all: main compilejava
+all: main.$(ARCH) compilejava
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -d target java/recipeNo027/Main.java
@@ -10,10 +10,16 @@ recipeNo027_main.o: c/recipeNo027_main.c
     	-I${JAVA_HOME}/include \
     	-I${JAVA_HOME}/include/$(ARCH)/ \
 
-main: recipeNo027_main.o
+main.darwin: recipeNo027_main.o
 	ld -o lib/recipeNo027_main \
 	$(LD_FLAGS) \
 	lib/recipeNo027_main.o
+
+main.linux:
+	$(CC) -pthread -o lib/recipeNo027_main c/recipeNo027_main.c \
+    	-I${JAVA_HOME}/include \
+    	-I${JAVA_HOME}/include/$(ARCH)/ \
+	$(LD_FLAGS)
 
 test:
 	lib/recipeNo027_main	

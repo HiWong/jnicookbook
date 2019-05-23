@@ -1,13 +1,21 @@
 include ../Makefile.common
 
+ifeq ($(ARCH),darwin)
+  CFLAGS=-rpath @loader_path
+  SHARED=-install_name libReloadLib.$(EXT)
+else
+  CFLAGS=
+  SHARED=
+endif
+
 all: compilejava compilec
 
 reloadlib:
-	cc -g -shared -fpic c/foo.c -o lib/libReloadLib.$(EXT) -install_name libReloadLib.$(EXT)
+	cc -g -shared -fpic c/foo.c -o lib/libReloadLib.$(EXT) $(SHARED)
 
 compilec:
 	# This is the final library for JNI calls
-	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -rpath @loader_path c/recipeNo018_ReloadLib.c -o lib/libReloadLibJNI.$(EXT) 
+	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) $(CFLAGS) c/recipeNo018_ReloadLib.c -o lib/libReloadLibJNI.$(EXT) 
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo018/ReloadLib.java

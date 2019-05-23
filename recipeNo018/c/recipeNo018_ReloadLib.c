@@ -19,9 +19,14 @@ JNIEXPORT void JNICALL Java_recipeNo018_ReloadLib_displayMessage
   /* make sure to put libfoo on the LIBRARY_PATH */
   lib_handle = dlopen ("libReloadLib.dylib", RTLD_NOW);
   if (!lib_handle) {
-    fprintf (stderr, "%s\n", dlerror ());
-    exit (1);
+    /* In case it faild, let's try to open .so */
+    lib_handle = dlopen ("libReloadLib.so", RTLD_NOW);
+    if (!lib_handle) {
+      fprintf (stderr, "%s\n", dlerror ());
+      exit (1);
+    }
   }
+
 
   /* get the location of the given function inside library
      we will use it later on to call the function
