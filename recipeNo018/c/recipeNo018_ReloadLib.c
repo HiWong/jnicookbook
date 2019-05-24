@@ -5,6 +5,13 @@
 #include "recipeNo018_ReloadLib.h"
 #include "foo.h"
 
+#if defined(__APPLE__)
+  #define LIB_RELOAD_NAME "libReloadLib.dylib"
+#elif defined(__linux__)
+  #define LIB_RELOAD_NAME "libReloadLib.so"
+#else
+  #error Uknown_OS
+#endif
 
 JNIEXPORT void JNICALL Java_recipeNo018_ReloadLib_displayMessage
   (JNIEnv * env, jobject obj) {
@@ -17,7 +24,7 @@ JNIEXPORT void JNICALL Java_recipeNo018_ReloadLib_displayMessage
   char *error;
 
   /* make sure to put libfoo on the LIBRARY_PATH */
-  lib_handle = dlopen ("libReloadLib.dylib", RTLD_NOW);
+  lib_handle = dlopen ( LIB_RELOAD_NAME , RTLD_NOW);
   if (!lib_handle) {
     fprintf (stderr, "%s\n", dlerror ());
     exit (1);
