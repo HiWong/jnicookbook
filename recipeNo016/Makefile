@@ -4,7 +4,7 @@ all: compilejava compilec
 
 compilec:
 	cc -g -shared -fpic c/externalLib.c -o lib/libExternalLib.$(EXT)
-	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -Llib -lExternalLib c/recipeNo016_SigTerm.c -o lib/libSigTerm.$(EXT)
+	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) -o lib/libSigTerm.$(EXT) c/recipeNo016_SigTerm.c -Wl,-rpath,lib -Llib -lExternalLib 
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo016/SigTerm.java

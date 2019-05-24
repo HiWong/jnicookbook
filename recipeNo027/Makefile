@@ -16,11 +16,11 @@ main.darwin: recipeNo027_main.o
 	lib/recipeNo027_main.o
 
 main.linux:
-	$(CC) -pthread -o lib/recipeNo027_main c/recipeNo027_main.c \
-    	-I${JAVA_HOME}/include \
-    	-I${JAVA_HOME}/include/$(ARCH)/ \
-	$(LD_FLAGS)
-
+	$(CC) -g -o lib/recipeNo027_main c/recipeNo027_main.c \
+	-I${JAVA_HOME}/include \
+	-I${JAVA_HOME}/include/$(ARCH)/ \
+	-pthread $(LD_FLAGS) 
+	
 test:
 	lib/recipeNo027_main	
 

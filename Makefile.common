@@ -49,7 +49,7 @@ ifeq ($(ARCH),darwin)
   LD_FLAGS+=-rpath ${JAVA_SERVER_LIB} -ljvm
 else
   CC=gcc
-  LD_FLAGS=-L${JAVA_SERVER_LIB} -ljvm
+  LD_FLAGS=-Wl,-rpath,${JAVA_SERVER_LIB} -L${JAVA_SERVER_LIB} -ljvm
 endif
 
 JVM_INCLUDE=-I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) \

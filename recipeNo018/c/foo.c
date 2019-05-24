@@ -1,5 +1,5 @@
 #include <stdio.h>
 
 void foo (void) {
-  puts ("New message 1");
+  puts ("New message 2");
 }
