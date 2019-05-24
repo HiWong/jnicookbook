@@ -56,6 +56,26 @@ Debugging JNI code is not quite like sitting on cloud nine. You have to attach t
 
 At the moment, JNI Cookbook targets Linux and macOS. It should work on both platforms without any issues.
 
+# Setting up Ubuntu system for JNI Cookbook
+
+```
+sudo apt install openjdk-11-jdk
+sudo apt install git
+sudo apt install make
+sudo apt install gcc
+sudo apt install g++
+
+# Inside JNI Cookbook, all the Java stuff is based on JAVA_HOME
+# variable - you need it inside the env.
+export JAVA_HOME=`readlink -f $(which java) | sed 's|/bin/java||'`
+
+# We need ./lib on LD_LIBRARY_PATH
+# Rememer that inside JNI code we no longer use java.library.path
+# when it comes to resolving location of the shared library.
+# Inside JNI we base on system's way of locating the lib.
+export LD_LIBRARY_PATH=./lib:${LD_LIBRARY_PATH}
+```
+
 # Table of content
 
 |Recipe № | Short description |
