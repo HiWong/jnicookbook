@@ -56,6 +56,18 @@ Debugging JNI code is not quite like sitting on cloud nine. You have to attach t
 
 At the moment, JNI Cookbook targets Linux and macOS. It should work on both platforms without any issues.
 
+# Setting up macOS system for JNI Cookbook
+
+Make sure to install [XCode](https://itunes.apple.com/pl/app/xcode/id497799835?mt=12). Once installed, perform installation of `Command Line Tools`.
+
+Make sure to install [OpenJDK](https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_osx-x64_bin.tar.gz) or [Java SE Development Kit 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html).
+
+Once installed, make sure to set `JAVA_HOME` following way
+
+```
+export JAVA_HOME=$(/usr/libexec/java_home -v 12)
+```
+
 # Setting up Ubuntu system for JNI Cookbook
 
 ```
