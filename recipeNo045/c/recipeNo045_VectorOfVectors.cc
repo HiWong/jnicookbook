@@ -12,8 +12,6 @@ JNIEXPORT jobject JNICALL Java_recipeNo045_VectorOfVectors_getVector
                                  { 3.1, 3.2, 3.3 } 
                               };
 
-  std::vector<vector<float> >::iterator it = vect.begin();
-
   jclass vectorClass = env->FindClass("java/util/Vector");
   if(vectorClass == NULL) {
     return NULL;                  // alternatively, throw exception (recipeNo019)
@@ -25,8 +23,8 @@ JNIEXPORT jobject JNICALL Java_recipeNo045_VectorOfVectors_getVector
   }
 
 
-  jmethodID mid = env->GetMethodID(vectorClass, "<init>", "()V");
-  if(mid == NULL) {
+  jmethodID vectorConstructorID = env->GetMethodID(vectorClass, "<init>", "()V");
+  if(vectorConstructorID == NULL) {
     return NULL;                  // alternatively, throw exception (recipeNo019)
   }
 
@@ -35,8 +33,13 @@ JNIEXPORT jobject JNICALL Java_recipeNo045_VectorOfVectors_getVector
     return NULL;
   }
 
+  jmethodID floatConstructorID = env->GetMethodID(floatClass, "<init>", "(F)V"); 
+  if(floatConstructorID == NULL) {
+    return NULL;
+  }
+
   // Outer vector
-  jobject outerVector = env->NewObject(vectorClass, mid);
+  jobject outerVector = env->NewObject(vectorClass, vectorConstructorID);
   if(outerVector == NULL) {
     return NULL;                  // as above
   }
@@ -44,14 +47,9 @@ JNIEXPORT jobject JNICALL Java_recipeNo045_VectorOfVectors_getVector
   for(vector<float> i : vect) {
 
     // Inner vector
-    jobject innerVector = env->NewObject(vectorClass, mid);
+    jobject innerVector = env->NewObject(vectorClass, vectorConstructorID);
 
     for(float f : i) {
-      jmethodID floatConstructorID = env->GetMethodID(floatClass, "<init>", "(F)V"); 
-      if(floatConstructorID == NULL) {
-        return NULL;
-      }
- 
       // Now, we have object created by Float(f) 
       jobject floatValue = env->NewObject(floatClass, floatConstructorID, f);
       if(floatValue == NULL) {
@@ -62,7 +60,6 @@ JNIEXPORT jobject JNICALL Java_recipeNo045_VectorOfVectors_getVector
     }
 
     env->CallBooleanMethod(outerVector, addMethodID, innerVector);
-
 
   }
 
