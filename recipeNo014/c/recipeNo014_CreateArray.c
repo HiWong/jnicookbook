@@ -25,7 +25,7 @@ Java_recipeNo014_CreateArray_createBooleanArray (JNIEnv * env, jclass obj,
                                  (jboolean *) boolean_ptr);
 
   //release native memory region
-  (*env)->ReleaseBooleanArrayElements (env, array, boolean_ptr, 0);
+  free( boolean_ptr );
   
   return array;
 
@@ -51,7 +51,7 @@ JNIEXPORT jbyteArray JNICALL Java_recipeNo014_CreateArray_createByteArray
   (*env)->SetByteArrayRegion (env, array, 0, size, (jbyte *) byte_ptr);
 
   //release native memory region
-  (*env)->ReleaseByteArrayElements (env, array, byte_ptr, 0);
+  free( byte_ptr );
 
   return array;
 
@@ -77,7 +77,7 @@ JNIEXPORT jcharArray JNICALL Java_recipeNo014_CreateArray_createCharArray
   (*env)->SetCharArrayRegion (env, array, 0, size, (jchar *) char_ptr);
 
   //release native memory region
-  (*env)->ReleaseCharArrayElements (env, array, char_ptr, 0);
+  free( char_ptr );
 
   return array;
 
@@ -104,7 +104,7 @@ JNIEXPORT jshortArray JNICALL Java_recipeNo014_CreateArray_createShortArray
   (*env)->SetShortArrayRegion (env, array, 0, size, (jshort *) short_ptr);
 
   //release native memory region
-  (*env)->ReleaseShortArrayElements (env, array, short_ptr, 0);
+  free( short_ptr );  
 
   return array;
 
@@ -130,7 +130,7 @@ JNIEXPORT jintArray JNICALL Java_recipeNo014_CreateArray_createIntArray
   (*env)->SetIntArrayRegion (env, array, 0, size, (jint *) int_ptr);
 
   //release native memory region
-  (*env)->ReleaseIntArrayElements (env, array, int_ptr, 0);
+  free( int_ptr );
 
   return array;
 
@@ -156,7 +156,7 @@ JNIEXPORT jlongArray JNICALL Java_recipeNo014_CreateArray_createLongArray
   (*env)->SetLongArrayRegion (env, array, 0, size, (jlong *) long_ptr);
 
   //release native memory region
-  (*env)->ReleaseLongArrayElements (env, array, long_ptr, 0);
+  free( long_ptr );
 
   return array;
 
@@ -182,7 +182,7 @@ JNIEXPORT jfloatArray JNICALL Java_recipeNo014_CreateArray_createFloatArray
   (*env)->SetFloatArrayRegion (env, array, 0, size, (jfloat *) float_ptr);
 
   //release native memory region
-  (*env)->ReleaseFloatArrayElements (env, array, float_ptr, 0);
+  free( float_ptr );
 
   return array;
 
@@ -208,7 +208,7 @@ JNIEXPORT jdoubleArray JNICALL Java_recipeNo014_CreateArray_createDoubleArray
   (*env)->SetDoubleArrayRegion (env, array, 0, size, (jdouble *) double_ptr);
 
   //release native memory region
-  (*env)->ReleaseDoubleArrayElements (env, array, double_ptr, 0);
+  free( double_ptr );
 
   return array;
 
