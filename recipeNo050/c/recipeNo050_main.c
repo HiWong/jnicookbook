@@ -36,8 +36,18 @@ int main() {
   
   // This is the place where we call the method "path"
   // Method "path" will get the location of JAR file from the Java code
-  jmethodID method_path = (*env)->GetStaticMethodID (env, cls_Main, "path", "()V");
-  jint      result      = (*env)->CallStaticIntMethod (env, cls_Main, method_path);
+  jmethodID method_path = (*env)->GetStaticMethodID (env, cls_Main, "path", "()Ljava/lang/String;");
+  jobject   result      = (*env)->CallStaticObjectMethod (env, cls_Main, method_path);
+
+  const char *c_str;
+  c_str = (*env)->GetStringUTFChars(env, result, NULL);
+  if(c_str != NULL) {
+    printf("Path from Java: %s\n", c_str);
+  } else {
+    printf("Something went wrong :(");
+  }
+
+  (*env)->ReleaseStringUTFChars(env, result, c_str); 
 
 
   // Now, let's get it hard way. Let's make a hell lot of JNI based calls
@@ -74,7 +84,6 @@ int main() {
 
   // Finally, we have path, all we have to do is to "cast" it to char *
   // and print it
-  const char *c_str;
   c_str = (*env)->GetStringUTFChars(env, obj_String, NULL);
   if(c_str != NULL) {
     printf("Path from  JNI: %s\n", c_str);
