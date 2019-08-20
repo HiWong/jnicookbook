@@ -141,6 +141,7 @@ export LD_LIBRARY_PATH=./lib:${LD_LIBRARY_PATH}
 |recipe № 049|Redirecting JVM's System.out to file inside C code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo049)|
 |recipe № 050|How to find location of JAR from JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo050)|
 |recipe № 051|Very simple, Java based, 'Hello world' code - calling it from C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo051)|
+|recipe № 052|Registering native symbols without System.load[[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo052)|
 |[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion (sample code)|
 
 [![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
