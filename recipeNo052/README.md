@@ -7,15 +7,19 @@
 
 # recipe № 052 - Calling native method without creating shared library
 
-This sample shows how to register native method that is not exported via shared library. I have very simple method
+This sample shows how to register native method that is not exported via shared library. Let's say there is a very simple method (in Java class)
 
 ```
 public native static int addOne(int a);
 ```
 
-Instead of using `System.load` or `System.loadLibrary` I register native symbol using `RegisterNatives`
+and we want to call it. However, for the sake of example, I will not use `System.load` or `System.loadLibrary` in order to load the native code. Instead, I will call `RegisterNatives` inside `C` part of the code.
 
-Most of the code is related to initializing `JVM`, and then, instantiating the class and calling the method.
+> Look, ma, no System.load.
+>
+>   -- anonymous JNI developer
+
+In this sample, most of the source code is related to initializing `JVM`, then, I am instantiating the class and calling the method `RegisterNatives`. This way, native symbols are available for `JVM` even though they don't follow typical naming convention for native code called from `JVM`.
 
 # Building and running
 
