@@ -4,7 +4,8 @@ import com.sun.jna.Native
 
 trait HelloWorld extends Library {
 
-  def displayMessageWrapper(m: WString) : Boolean
+  def displayMessageWWrapper(m: WString) : Boolean
+  def displayMessageWrapper(m: String)  : Boolean
 
 }
 
@@ -13,7 +14,11 @@ object HelloJNA {
   def main(args:Array[String]):Unit = {
 
     val libc   = Native.load( "HelloWorld", classOf[HelloWorld] )
-    val result = libc.displayMessageWrapper( new WString("Hello from Scala!") )
+   
+    var result = libc.displayMessageWWrapper( new WString("Hello from Scala!") )
+    println("Result: " + result);
+    
+    result     = libc.displayMessageWrapper( new String("Hello from Scala!") )
     println("Result: " + result);
 
   }
