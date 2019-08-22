@@ -5,7 +5,7 @@
   <a href="http://jnicookbook.owsiak.org/"><img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/JNICookbook.png"></a>
 </p>
 
-# recipe № 053 - `GetByteArrayElements` vs. `GetPrimitiveArrayCritical`
+# recipe № 053 - GetByteArrayElements vs. GetPrimitiveArrayCritical
 
 This sample shows the difference between two calls that access data on `JVM's` heap. These two means of accessing data differ and have their advantages and dissadvantages.
 
