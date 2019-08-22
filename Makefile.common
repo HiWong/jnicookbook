@@ -42,10 +42,10 @@ endif
 # inside /Library/Java/JavaVirtualMachines/
 #
 ifeq ($(ARCH),darwin)
-  CC=llvm-gcc
+  CC=cc
   LD_FLAGS=-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
-  LD_FLAGS+=-demangle -dynamic -arch x86_64 
-  LD_FLAGS+=-macosx_version_min 10.13.0 -lSystem
+  LD_FLAGS+=-arch x86_64 
+  LD_FLAGS+=-macosx_version_min 10.14.0 -lSystem
   LD_FLAGS+=-L${JAVA_SERVER_LIB} -rpath ${JAVA_SERVER_LIB} -ljvm
 else
   CC=gcc
