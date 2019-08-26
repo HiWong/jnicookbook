@@ -143,6 +143,9 @@ export LD_LIBRARY_PATH=./lib:${LD_LIBRARY_PATH}
 |recipe № 051|Very simple, Java based, 'Hello world' code - calling it from C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo051)|
 |recipe № 052|Registering native symbols without System.load [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo052)|
 |recipe № 053|Accessing elements of array - GetByteArrayElements vs. GetPrimitiveArrayCritical [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo053)|
+|recipe № 054|Hello Scala! [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo054)|
+|recipe № 055|Unboxing primitive types from wrapper objects - method per type [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo055)|
+|recipe № 056|Unboxing primitive types from wrapper objects - one method and IsInstanceOf [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo056)|
 |[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion (sample code)|
 
 [![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
