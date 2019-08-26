@@ -7,7 +7,9 @@ JNIEXPORT void JNICALL Java_recipeNo009_PassString_displayString
 
   //we have to get string bytes into C string
   const char *c_str;
+
   c_str = (*env)->GetStringUTFChars (env, str, NULL);
+  
   if (c_str == NULL) {
     return;
   }
