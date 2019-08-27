@@ -1,12 +1,14 @@
+package recipeNo057
+
 import com.sun.jna.Library
 import com.sun.jna.WString
 import com.sun.jna.Native
 import com.sun.jna.Structure
-import recipeNo057.Data
+import scala.jdk.CollectionConverters._
 
 trait HelloWorld extends Library {
-
-  def GetData(m: WString) : Data.ByValue;
+  
+  def GetData(m: WString) : Data.ByValue
 
 }
 
