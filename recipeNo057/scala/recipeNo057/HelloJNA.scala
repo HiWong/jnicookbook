@@ -4,7 +4,6 @@ import com.sun.jna.Library
 import com.sun.jna.WString
 import com.sun.jna.Native
 import com.sun.jna.Structure
-import scala.jdk.CollectionConverters._
 
 trait HelloWorld extends Library {
   
