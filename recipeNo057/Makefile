@@ -16,7 +16,7 @@ compilescala:
 	scalac -d target -classpath "./jar/jna-5.4.0.jar:target" scala/recipeNo057/HelloJNA.scala
 
 download_jna:
-	curl -z jar/jna-5.4.0.jar -o jar/jna-5.4.0.jar http://repo1.maven.org/maven2/net/java/dev/jna/jna/5.4.0/jna-5.4.0.jar 
+	curl -s -z jar/jna-5.4.0.jar -o jar/jna-5.4.0.jar http://repo1.maven.org/maven2/net/java/dev/jna/jna/5.4.0/jna-5.4.0.jar 
 
 test:
 	scala -Djna.library.path="./lib" -classpath "./target:jar/jna-5.4.0.jar" recipeNo057.HelloJNA

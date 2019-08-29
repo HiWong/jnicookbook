@@ -13,7 +13,7 @@ interface CLibrary extends Library {
 
   public class Data extends Structure {
 
-    public static final List<String> FIELDS =  List.of("field_1", "field_2");
+    public static final List<String> FIELDS =  List.of("field_1", "field_2", "b_1", "b_2");
 
     public static class ByVal extends Data implements Structure.ByValue { }
 
@@ -21,6 +21,8 @@ interface CLibrary extends Library {
 
     public int  field_1;
     public int  field_2;
+    public boolean b_1;
+    public boolean b_2;
 
     @Override
     protected List<String> getFieldOrder() {
