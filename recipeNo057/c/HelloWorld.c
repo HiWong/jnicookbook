@@ -1,8 +1,6 @@
-#include <string>
 #include <jni.h> 
 #include <stdbool.h>
-
-extern "C" {
+#include <stdlib.h>
 
 #pragma pack(push,1)
 typedef struct Data {
@@ -32,4 +30,3 @@ Data GetDataValue()
   return retVal;
 }
 
-}

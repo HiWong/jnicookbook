@@ -1,12 +1,16 @@
 include ../Makefile.common
 
-all: download_jna compilec compilejava compilescala
+all: download_jna compilecc compilejava compilescala
 
 compilec:
-	c++ -std=c++11 -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/HelloWorld.cc -o lib/libHelloWorld.$(EXT)
+	cc -Wpadded -g -O0 -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/HelloWorld.c -o lib/libHelloWorld.$(EXT)
+
+compilecc:
+	c++ -Wpadded -std=c++11 -g -O0 -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/HelloWorld.cc -o lib/libHelloWorld.$(EXT)
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -cp "./jar/jna-5.4.0.jar:target" -d target java/recipeNo057/Data.java
+	$(JAVA_HOME)/bin/javac -cp "./jar/jna-5.4.0.jar:target" -d target java/recipeNo057/Main.java
 
 compilescala:
 	scalac -d target -classpath "./jar/jna-5.4.0.jar:target" scala/recipeNo057/HelloJNA.scala
@@ -16,6 +20,7 @@ download_jna:
 
 test:
 	scala -Djna.library.path="./lib" -classpath "./target:jar/jna-5.4.0.jar" recipeNo057.HelloJNA
+	$(JAVA_HOME)/bin/java -Djna.library.path="./lib" -cp "./jar/jna-5.4.0.jar:target" recipeNo057.Main
 
 clean:
 	-rm -rf target/*
