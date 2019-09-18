@@ -5,7 +5,7 @@
   <a href="http://jnicookbook.owsiak.org/"><img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/JNICookbook.png"></a>
 </p>
 
-# recipe № 060 - How to run Java code (that depends on JARs) from C
+# recipe № 060 - How to run Java code (with Log4j) from C
 
 This time, I am calling Java code that depends on Log4J. Inside JNI based code we have to make sure to point to the jar file we depend on.
 
