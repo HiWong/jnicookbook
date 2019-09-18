@@ -7,20 +7,25 @@
 
 # recipe № 059 - Calling code from static library
 
-In this sample, there are two source files
+In this sample, there are two sets of source files
 
 ```
-recipeNo059_AnotherFunction.c  \
-recipeNo059_AnotherFunction.h --- external library we want to use in our code
-
-recipeNo059_HelloWorld.c      --- this is a JNI code that will use external library
+recipeNo059_AnotherFunction.c  ───┐ 
+recipeNo059_AnotherFunction.h  ───┴─── external library
+           │
+           └────── libAnotherFuntion.a
+                            │
+                            │
+           ┌─ linkend with ─┘
+           │
+recipeNo059_HelloWorld.c       ─────── JNI code
 ```
 
-These files will serve different purposes. `AnotherFunction` will be used as source for the static library. `HelloWorld` will be used to generate shared library that will be oaded from Java code.
+These files serve different purposes. `AnotherFunction` is used as source for the static library. `HelloWorld` is a source for shared library that will be loaded from Java code.
 
-If you are looking for sample where multiple source files are compiled and put into single shared library, take a look here: <a href="http://jnicookbook.owsiak.org/recipe-No-021/">calling function from different source file</a>.
+If you are looking for sample where multiple source files are compiled, and put into single shared library, take a look here: <a href="http://jnicookbook.owsiak.org/recipe-No-021/">calling function from different source file</a>.
 
-If you are looking for sample where one shared library (`JNI` based) calls another shared library, take a look here: <<a href="http://jnicookbook.owsiak.org/recipe-No-023/">calling code from another shared library</a>.
+If you are looking for sample where shared library (`JNI` based) calls the code from another shared library, take a look here: <a href="http://jnicookbook.owsiak.org/recipe-No-023/">calling code from another shared library</a>.
 
 # Building and running
 
