@@ -10,7 +10,13 @@
 This time, I am calling Java code that depends on Log4J. Inside JNI based code we have to make sure to point to the jar file we depend on.
 
 ```
-public static void displayMessage() {
+public class Main {
+
+  private static final Logger logger = LogManager.getLogger("Main");
+
+  public static void displayMessage() {
+    logger.info("Hello from Java");
+  }
 }
 ```
 
