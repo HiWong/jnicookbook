@@ -10,15 +10,16 @@
 In this sample, there are two sets of source files
 
 ```
-recipeNo059_AnotherFunction.c  ───┐ 
-recipeNo059_AnotherFunction.h  ───┴─── external library
+recipeNo059_AnotherFunction.h  ───┐ 
+recipeNo059_AnotherFunction.c  ───┴───→ external library
+                                               │
+                                               ↓
+                                      libAnotherFuntion.a
+                                               ↑
+                                               │
+           ┌───────── is linkend with ─────────┘
            │
-           └────── libAnotherFuntion.a
-                            │
-                            │
-           ┌─ linkend with ─┘
-           │
-recipeNo059_HelloWorld.c       ─────── JNI code
+recipeNo059_HelloWorld.c       ←─────── JNI based code
 ```
 
 These files serve different purposes. `AnotherFunction` is used as source for the static library. `HelloWorld` is a source for shared library that will be loaded from Java code.
