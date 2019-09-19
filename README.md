@@ -150,6 +150,7 @@ export LD_LIBRARY_PATH=./lib:${LD_LIBRARY_PATH}
 |recipe № 058|Passing "unsigned long" to JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo058)|
 |recipe № 059|Using code from static library inside JNI based code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo059)|
 |recipe № 060|How to run Java code (with Log4j) from C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo060)|
+|recipe № 061|Passing std::map<std::string, std::string> from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo061)|
 |[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion (sample code)|
 
 [![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
