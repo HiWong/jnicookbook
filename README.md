@@ -49,7 +49,7 @@ JNI Cookbook samples were tested with:
 Debugging JNI code is not quite like sitting on cloud nine. You have to attach to JVM where JNI code is running and debug native code using external tools (e.g.: `gdb`, `CLion`). When it comes to debugging JNI code, you can find some hints inside JNICookbook as well. Even more, you can find a screencast that demonstates how to debug JNI code using `IntelliJ IDEA` and `CLion`
 
 <p align="center">
-  <a href="https://youtu.be/8Cjeq4l5COU"><img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/debug.png"></a>
+  <a href="https://youtu.be/8Cjeq4l5COU"><img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/CLion.gif"></a>
 </p>
 
 # Requirements
