@@ -42,7 +42,7 @@ int main(int argc, const char * argv[]) {
   
     // This is the place where we are looking for class
     // and it's method - "displayMessage".
-    jclass cls_Main = (*env)->FindClass (env, "recipeNo051/Main");
+    jclass cls_Main = (*env)->FindClass (env, "recipeNo065/Main");
     
     // This is the place where we call the method "displayMessage"
     jmethodID method_displayMessage = (*env)->GetStaticMethodID (env, cls_Main, "displayMessage", "()V");
