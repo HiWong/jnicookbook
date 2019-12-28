@@ -16,8 +16,10 @@ int main(int argc, const char * argv[]) {
     // main function will be called either from lib or from root directory
     // of given sample code. It's possible to use some env variables here
     // or to pass this value to main, but I don't care.
-    // This is just a sample. 
-    options[0].optionString = "-Djava.class.path=./target:../target";
+    // This is just a sample.
+      
+    NSString *home = [[[NSProcessInfo processInfo]environment]objectForKey:@"HOME"];
+    options[0].optionString = (char *)[[NSString stringWithFormat: @"-Djava.class.path=%@/workspace/jnicookbook/recipeNo065/target", home] UTF8String];
   
     // if you want, you can pass additional parameters for JVM following way
     //options[1].optionString = "-verbose:jni";
