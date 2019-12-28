@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <jni.h>
+#include "jni.h"
 #import <Foundation/Foundation.h>
 
 int main(int argc, const char * argv[]) {
