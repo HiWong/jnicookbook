@@ -8,26 +8,31 @@ LD_FLAGS+=$(LD_FLAGS_JAVA)
 
 all: main.$(ARCH) compilejava
 
-dirs:
+remove_dirs:
+	rm -rf recipeNo066.app
+
+create_dirs: remove_dirs
 	mkdir -p recipeNo066.app/Contents/Resources
 	mkdir -p recipeNo066.app/Contents/MacOS
 	cp Info.plist recipeNo066.app/Contents
 	
-compilejava: dirs
-	$(JAVA_HOME)/bin/javac -d recipeNo066.app/Contents/Resources/target java/recipeNo066/Main.java
+compilejava: create_dirs
+	$(JAVA_HOME)/bin/javac -d target java/recipeNo066/Main.java
 
-lib/recipeNo066_main.o: c/recipeNo066_main.m dirs
+lib/recipeNo066_main.o: compilejava c/recipeNo066_main.m 
 	$(CC) -g -o lib/recipeNo066_main.o -c c/recipeNo066_main.m \
     	-I${JAVA_HOME}/include \
     	-I${JAVA_HOME}/include/$(ARCH)/ \
 
 main.darwin: lib/recipeNo066_main.o
-	ld -o recipeNo066.app/Contents/MacOS/recipeNo066 \
+	ld -o lib/recipeNo066_main  \
 	$(LD_FLAGS) \
 	-framework Foundation \
 	lib/recipeNo066_main.o
 
 install: main.darwin compilejava
+	-cp lib/recipeNo066_main recipeNo066.app/Contents/MacOS/recipeNo066
+	-cp -r target recipeNo066.app/Contents/Resources/target
 	-$(JAVA_HOME)/bin/jlink --add-modules java.base --output recipeNo066.app/Contents/Resources/jvm
 	-install_name_tool -add_rpath @executable_path/../Resources/jvm/lib/server recipeNo066.app/Contents/MacOS/recipeNo066
 
