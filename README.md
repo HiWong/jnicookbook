@@ -153,7 +153,12 @@ export LD_LIBRARY_PATH=./lib:${LD_LIBRARY_PATH}
 |recipe № 061|Passing std::map<std::string, std::string> from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo061)|
 |recipe № 063|Accessing fields of inner class [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo063)|
 |recipe № 064|Running simple JNI code - using JDK9 modules [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo064)|
-|recipe № 065|Very simple, Java based, 'Hello world' code - calling it from Objective-C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo065)|
-|[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion (sample code)|
+|recipe № 065|Very simple, Java based, 'Hello world' code - calling it from Objective-C (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo065)|
+|recipe № 066|Embedding JVM inside macOS application bundle and calling JVM from Objective-C (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo066)|
+|recipe № 067|Iterating over objects inside java.util.List - using get method [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo067)|
+|recipe № 068|Iterating over objects inside java.util.List - using java.util.Iterator [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo068)|
+|recipe № 069|Iterating over objects inside array of Objects (SimpleBean[]) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo069)|
+|[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD001)|
+|recipe № D003|Profiling JNI based code using Instruments.app (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD003)|
 
 [![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)

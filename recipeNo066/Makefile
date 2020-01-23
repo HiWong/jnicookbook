@@ -6,7 +6,7 @@ LD_FLAGS+=-arch x86_64
 LD_FLAGS+=-macosx_version_min 10.14.0 -lSystem
 LD_FLAGS+=$(LD_FLAGS_JAVA)
 
-all: main.$(ARCH) compilejava
+all: main.$(ARCH)
 
 remove_dirs:
 	rm -rf recipeNo066.app
@@ -30,6 +30,9 @@ main.darwin: lib/recipeNo066_main.o
 	-framework Foundation \
 	lib/recipeNo066_main.o
 
+main.linux:
+	@echo "Nothing to be done here. Sorry. This one is macOS specific."
+
 install: main.darwin compilejava
 	-cp lib/recipeNo066_main recipeNo066.app/Contents/MacOS/recipeNo066
 	-cp -r target recipeNo066.app/Contents/Resources/target
@@ -40,7 +43,7 @@ test: install
 	./recipeNo066.app/Contents/MacOS/recipeNo066
 
 clean:
-	-rm -rfv target/*
-	-rm -rf lib/*
-	-rm -rf recipeNo066.app
+	test -z "target/*" || rm -rfv target/*
+	test -z "lib/*" || rm -rf lib/*
+	test -z "recipeNo066.app" || rm -rf recipeNo066.app
 

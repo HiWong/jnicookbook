@@ -1,6 +1,6 @@
 include ../Makefile.common
 
-all: main.$(ARCH) compilejava
+all: main.$(ARCH)
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -d target java/recipeNo065/Main.java
@@ -10,17 +10,14 @@ recipeNo065_main.o: c/recipeNo065_main.m
     	-I${JAVA_HOME}/include \
     	-I${JAVA_HOME}/include/$(ARCH)/ \
 
-main.darwin: recipeNo065_main.o
+main.darwin: compilejava recipeNo065_main.o
 	ld -o lib/recipeNo065_main \
 	$(LD_FLAGS) \
 	-framework Foundation \
 	lib/recipeNo065_main.o
 
 main.linux:
-	$(CC) -g -o lib/recipeNo065_main c/recipeNo065_main.c \
-	-I${JAVA_HOME}/include \
-	-I${JAVA_HOME}/include/$(ARCH)/ \
-	-pthread $(LD_FLAGS) 
+	@echo "Nothing to be done here. Sorry. This one is macOS specific."
 	
 test:
 	lib/recipeNo065_main
