@@ -1,3 +1,3 @@
 module client {
-  requires recipeNo064;
+  requires recipeNo064_;
 }

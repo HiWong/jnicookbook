@@ -12,6 +12,7 @@ test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo034.HelloWorld
 
 clean: clean-common
-	$(call rm-test,"c/recipeNo034_HelloWorld*.h")
+	$(call rm-test,c/recipeNo034_HelloWorld.h)
+	$(call rm-test,c/recipeNo034_HelloWorld_NativeWrapper.h)
 
 include ../Makefile.clean
