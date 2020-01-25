@@ -2,6 +2,9 @@ include ../Makefile.common
 
 all: download_jna compilecc compilejava compilescala
 
+dirs:
+	mkdir -p jar
+
 compilec:
 	cc -Wpadded -g -O0 -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/HelloWorld.c -o lib/libHelloWorld.$(EXT)
 
@@ -15,14 +18,14 @@ compilejava:
 compilescala:
 	scalac -d target -classpath "./jar/jna-5.4.0.jar:target" scala/recipeNo057/HelloJNA.scala
 
-download_jna:
-	curl -s -z jar/jna-5.4.0.jar -o jar/jna-5.4.0.jar http://repo1.maven.org/maven2/net/java/dev/jna/jna/5.4.0/jna-5.4.0.jar 
+download_jna: dirs
+	curl -s -L -z jar/jna-5.4.0.jar -o jar/jna-5.4.0.jar https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.4.0/jna-5.4.0.jar 
 
 test:
 	scala -Djna.library.path="./lib" -classpath "./target:jar/jna-5.4.0.jar" recipeNo057.HelloJNA
 	$(JAVA_HOME)/bin/java -Djna.library.path="./lib" -cp "./jar/jna-5.4.0.jar:target" recipeNo057.Main
 
 clean: clean-common
-	$(call rm-test,"jar/*")
+	$(call rm-test,jar)
 
 include ../Makefile.clean

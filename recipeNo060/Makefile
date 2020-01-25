@@ -11,8 +11,8 @@ recipeNo060_main.o: c/recipeNo060_main.c
     	-I${JAVA_HOME}/include/$(ARCH)/ \
 
 download_log4j:
-	curl -s -z jar/log4j-api-2.12.1.jar -o jar/log4j-api-2.12.1.jar http://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar
-	curl -s -z jar/log4j-core-2.12.1.jar -o jar/log4j-core-2.12.1.jar http://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/2.12.1/log4j-core-2.12.1.jar
+	curl -s -L -z jar/log4j-api-2.12.1.jar -o jar/log4j-api-2.12.1.jar https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar
+	curl -s -L -z jar/log4j-core-2.12.1.jar -o jar/log4j-core-2.12.1.jar https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/2.12.1/log4j-core-2.12.1.jar
 
 main.darwin: recipeNo060_main.o
 	ld -o lib/recipeNo060_main \
