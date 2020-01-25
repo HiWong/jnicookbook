@@ -104,73 +104,73 @@ At the time of writing these versions were, respectivelly: [Scala 2.13.1](https:
 
 |Recipe № | Short description |
 |---|---|
-|[recipe №&nbsp;001](http://jnicookbook.owsiak.org/recipe-No-001/)|running simple JNI code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo001)|
-|[recipe № 002](http://jnicookbook.owsiak.org/recipe-No-002/)|passing int value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo002)|
-|[recipe № 003](http://jnicookbook.owsiak.org/recipe-No-003/)|passing double value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo003)|
-|[recipe № 004](http://jnicookbook.owsiak.org/recipe-No-004/)|passing long value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo004)|
-|[recipe № 005](http://jnicookbook.owsiak.org/recipe-No-005/)|passing short value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo005)|
-|[recipe № 006](http://jnicookbook.owsiak.org/recipe-No-006/)|passing char value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo006)|
-|[recipe № 007](http://jnicookbook.owsiak.org/recipe-No-007/)|passing byte value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo007)|
-|[recipe № 008](http://jnicookbook.owsiak.org/recipe-No-008/)|passing boolean value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo008)|
-|[recipe № 009](http://jnicookbook.owsiak.org/recipe-No-009/)|passing java.lang.String value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo009)|
-|[recipe № 010](http://jnicookbook.owsiak.org/recipe-No-010/)|passing java.lang.String value from C to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo010)|
-|[recipe № 011](http://jnicookbook.owsiak.org/recipe-No-011/)|passing primitive types from C to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo011)|
-|[recipe № 012](http://jnicookbook.owsiak.org/recipe-No-012/)|passing primitives array from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo012)|
-|[recipe № 013](http://jnicookbook.owsiak.org/recipe-No-013/)|passing primitives array from Java to C and back (commit changes) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo013)|
-|[recipe № 014](http://jnicookbook.owsiak.org/recipe-No-014/)|passing memory allocated in C back to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo014)|
-|[recipe № 015](http://jnicookbook.owsiak.org/recipe-No-015/)|handling SIGSEGV/SIGBUS in JNI code (stop JVM from crashing) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo015)|
-|[recipe № 016](http://jnicookbook.owsiak.org/recipe-No-016/)|handling exit calls from external library called via JNI (atexit) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo016)|
-|[recipe № 017](http://jnicookbook.owsiak.org/recipe-No-017/)|handling exit calls from external library called via JNI (-Dexit) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo017)|
-|[recipe № 018](http://jnicookbook.owsiak.org/recipe-No-018)|dynamic loading of library in JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo018)|
-|[recipe № 019](http://jnicookbook.owsiak.org/recipe-No-019/)|throwing exception from C code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo019)|
-|[recipe № 020](http://jnicookbook.owsiak.org/recipe-No-020/)|accessing fields of object passed as argument [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo020)|
-|[recipe № 021](http://jnicookbook.owsiak.org/recipe-No-021/)|calling function from different source file [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo021)|
-|[recipe № 022](http://jnicookbook.owsiak.org/recipe-No-022/)|Java based daemon [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo022)|
-|[recipe № 023](http://jnicookbook.owsiak.org/recipe-No-023/)|calling code from another shared library [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo023)|
-|[recipe № 024](http://jnicookbook.owsiak.org/recipe-No-024/)|calling JNI methods from Threads and how to debug them using gdb [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo024)|
-|recipe № 025|calling C++ code from C wrapper [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo025)|
-|recipe № 026|passing 2D arrays from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo026)|
-|[recipe № 027](http://jnicookbook.owsiak.org/recipe-no-027/)|Calling class methods from multiple threads [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo027)|
-|recipe № 028|Calling JVM class from C (first draft for thread based computations) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo028)|
-|[recipe № 029](http://jnicookbook.owsiak.org/recipe-no-029/)|Running Java as daemon – main daemon’s loop in Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo029)|
-|[recipe № 030](http://jnicookbook.owsiak.org/recipe-no-030/)|Abstract method and native implementation [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo030)|
-|recipe № 031|Running simple JNI code from inside JAR file [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo031)|
-|recipe № 032|Calling JVM from multiple C threads [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo032)|
-|recipe № 033|Comparing execution time of "Hello world!" executed from JNI/JNA/ProcessBuilder [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo033)|
-|recipe № 034|Running simple JNI code from Outer class and Inner class [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo034)|
-|recipe № 035|Running simple JNI code from inside JAR file with libraries it depends on [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo035)|
-|recipe № 037|Passing HashMap to C code via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo037)|
-|recipe № 038|Passing HashMap to C code via JNI (using two arrays) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo038)|
-|recipe № 039|Calling (from C) Java method that returns 2D array [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo039)|
-|recipe № 040|Passing ByteBuffer to C code via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo040)|
-|recipe № 042|Passing Set of Strings to C code via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo042)|
-|recipe № 043|Settings environment variable inside JVM via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo043)|
-|recipe № 044|Getting info (inside JNI code) regarding current thread using java.lang.Thread [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo044)|
-|[recipe № 045](http://jnicookbook.owsiak.org/recipe-no-045/)|Returning vector<vector<float> > from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo045)|
-|recipe № 046|Filling java.util.List (passed to JNI) with data - inside C++ [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo046)|
-|recipe № 047|Filling java.util.HashMap (passed to JNI) with data - inside C++ [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo047)|
-|recipe № 048|Returning map<int, int> from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo048)|
-|recipe № 049|Redirecting JVM's System.out to file inside C code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo049)|
-|recipe № 050|How to find location of JAR from JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo050)|
-|recipe № 051|Very simple, Java based, 'Hello world' code - calling it from C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo051)|
-|recipe № 052|Registering native symbols without System.load [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo052)|
-|recipe № 053|Accessing elements of array - GetByteArrayElements vs. GetPrimitiveArrayCritical [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo053)|
-|recipe № 054|Hello Scala! [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo054)|
-|recipe № 055|Unboxing primitive types from wrapper objects - method per type [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo055)|
-|recipe № 056|Unboxing primitive types from wrapper objects - one method and IsInstanceOf [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo056)|
-|recipe № 057|Hello Scala! I am passing structures! [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo057)|
-|recipe № 058|Passing "unsigned long" to JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo058)|
-|recipe № 059|Using code from static library inside JNI based code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo059)|
-|recipe № 060|How to run Java code (with Log4j) from C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo060)|
-|recipe № 061|Passing std::map<std::string, std::string> from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo061)|
-|recipe № 063|Accessing fields of inner class [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo063)|
-|recipe № 064|Running simple JNI code - using JDK9 modules [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo064)|
-|recipe № 065|Very simple, Java based, 'Hello world' code - calling it from Objective-C (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo065)|
-|recipe № 066|Embedding JVM inside macOS application bundle and calling JVM from Objective-C (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo066)|
-|recipe № 067|Iterating over objects inside java.util.List - using get method [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo067)|
-|recipe № 068|Iterating over objects inside java.util.List - using java.util.Iterator [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo068)|
-|recipe № 069|Iterating over objects inside array of Objects (SimpleBean[]) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo069)|
-|[recipe № D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD001)|
-|recipe № D003|Profiling JNI based code using Instruments.app (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD003)|
+|[recipe&nbsp;№&nbsp;001](http://jnicookbook.owsiak.org/recipe-No-001/)|running simple JNI code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo001)|
+|[recipe&nbsp;№&nbsp;002](http://jnicookbook.owsiak.org/recipe-No-002/)|passing int value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo002)|
+|[recipe&nbsp;№&nbsp;003](http://jnicookbook.owsiak.org/recipe-No-003/)|passing double value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo003)|
+|[recipe&nbsp;№&nbsp;004](http://jnicookbook.owsiak.org/recipe-No-004/)|passing long value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo004)|
+|[recipe&nbsp;№&nbsp;005](http://jnicookbook.owsiak.org/recipe-No-005/)|passing short value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo005)|
+|[recipe&nbsp;№&nbsp;006](http://jnicookbook.owsiak.org/recipe-No-006/)|passing char value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo006)|
+|[recipe&nbsp;№&nbsp;007](http://jnicookbook.owsiak.org/recipe-No-007/)|passing byte value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo007)|
+|[recipe&nbsp;№&nbsp;008](http://jnicookbook.owsiak.org/recipe-No-008/)|passing boolean value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo008)|
+|[recipe&nbsp;№&nbsp;009](http://jnicookbook.owsiak.org/recipe-No-009/)|passing java.lang.String value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo009)|
+|[recipe&nbsp;№&nbsp;010](http://jnicookbook.owsiak.org/recipe-No-010/)|passing java.lang.String value from C to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo010)|
+|[recipe&nbsp;№&nbsp;011](http://jnicookbook.owsiak.org/recipe-No-011/)|passing primitive types from C to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo011)|
+|[recipe&nbsp;№&nbsp;012](http://jnicookbook.owsiak.org/recipe-No-012/)|passing primitives array from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo012)|
+|[recipe&nbsp;№&nbsp;013](http://jnicookbook.owsiak.org/recipe-No-013/)|passing primitives array from Java to C and back (commit changes) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo013)|
+|[recipe&nbsp;№&nbsp;014](http://jnicookbook.owsiak.org/recipe-No-014/)|passing memory allocated in C back to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo014)|
+|[recipe&nbsp;№&nbsp;015](http://jnicookbook.owsiak.org/recipe-No-015/)|handling SIGSEGV/SIGBUS in JNI code (stop JVM from crashing) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo015)|
+|[recipe&nbsp;№&nbsp;016](http://jnicookbook.owsiak.org/recipe-No-016/)|handling exit calls from external library called via JNI (atexit) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo016)|
+|[recipe&nbsp;№&nbsp;017](http://jnicookbook.owsiak.org/recipe-No-017/)|handling exit calls from external library called via JNI (-Dexit) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo017)|
+|[recipe&nbsp;№&nbsp;018](http://jnicookbook.owsiak.org/recipe-No-018)|dynamic loading of library in JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo018)|
+|[recipe&nbsp;№&nbsp;019](http://jnicookbook.owsiak.org/recipe-No-019/)|throwing exception from C code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo019)|
+|[recipe&nbsp;№&nbsp;020](http://jnicookbook.owsiak.org/recipe-No-020/)|accessing fields of object passed as argument [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo020)|
+|[recipe&nbsp;№&nbsp;021](http://jnicookbook.owsiak.org/recipe-No-021/)|calling function from different source file [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo021)|
+|[recipe&nbsp;№&nbsp;022](http://jnicookbook.owsiak.org/recipe-No-022/)|Java based daemon [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo022)|
+|[recipe&nbsp;№&nbsp;023](http://jnicookbook.owsiak.org/recipe-No-023/)|calling code from another shared library [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo023)|
+|[recipe&nbsp;№&nbsp;024](http://jnicookbook.owsiak.org/recipe-No-024/)|calling JNI methods from Threads and how to debug them using gdb [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo024)|
+|recipe&nbsp;№&nbsp;025|calling C++ code from C wrapper [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo025)|
+|recipe&nbsp;№&nbsp;026|passing 2D arrays from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo026)|
+|[recipe&nbsp;№&nbsp;027](http://jnicookbook.owsiak.org/recipe-no-027/)|Calling class methods from multiple threads [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo027)|
+|recipe&nbsp;№&nbsp;028|Calling JVM class from C (first draft for thread based computations) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo028)|
+|[recipe&nbsp;№&nbsp;029](http://jnicookbook.owsiak.org/recipe-no-029/)|Running Java as daemon – main daemon’s loop in Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo029)|
+|[recipe&nbsp;№&nbsp;030](http://jnicookbook.owsiak.org/recipe-no-030/)|Abstract method and native implementation [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo030)|
+|recipe&nbsp;№&nbsp;031|Running simple JNI code from inside JAR file [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo031)|
+|recipe&nbsp;№&nbsp;032|Calling JVM from multiple C threads [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo032)|
+|recipe&nbsp;№&nbsp;033|Comparing execution time of "Hello world!" executed from JNI/JNA/ProcessBuilder [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo033)|
+|recipe&nbsp;№&nbsp;034|Running simple JNI code from Outer class and Inner class [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo034)|
+|recipe&nbsp;№&nbsp;035|Running simple JNI code from inside JAR file with libraries it depends on [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo035)|
+|recipe&nbsp;№&nbsp;037|Passing HashMap to C code via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo037)|
+|recipe&nbsp;№&nbsp;038|Passing HashMap to C code via JNI (using two arrays) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo038)|
+|recipe&nbsp;№&nbsp;039|Calling (from C) Java method that returns 2D array [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo039)|
+|recipe&nbsp;№&nbsp;040|Passing ByteBuffer to C code via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo040)|
+|recipe&nbsp;№&nbsp;042|Passing Set of Strings to C code via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo042)|
+|recipe&nbsp;№&nbsp;043|Settings environment variable inside JVM via JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo043)|
+|recipe&nbsp;№&nbsp;044|Getting info (inside JNI code) regarding current thread using java.lang.Thread [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo044)|
+|[recipe&nbsp;№&nbsp;045](http://jnicookbook.owsiak.org/recipe-no-045/)|Returning vector<vector<float> > from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo045)|
+|recipe&nbsp;№&nbsp;046|Filling java.util.List (passed to JNI) with data - inside C++ [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo046)|
+|recipe&nbsp;№&nbsp;047|Filling java.util.HashMap (passed to JNI) with data - inside C++ [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo047)|
+|recipe&nbsp;№&nbsp;048|Returning map<int, int> from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo048)|
+|recipe&nbsp;№&nbsp;049|Redirecting JVM's System.out to file inside C code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo049)|
+|recipe&nbsp;№&nbsp;050|How to find location of JAR from JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo050)|
+|recipe&nbsp;№&nbsp;051|Very simple, Java based, 'Hello world' code - calling it from C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo051)|
+|recipe&nbsp;№&nbsp;052|Registering native symbols without System.load [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo052)|
+|recipe&nbsp;№&nbsp;053|Accessing elements of array - GetByteArrayElements vs. GetPrimitiveArrayCritical [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo053)|
+|recipe&nbsp;№&nbsp;054|Hello Scala! [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo054)|
+|recipe&nbsp;№&nbsp;055|Unboxing primitive types from wrapper objects - method per type [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo055)|
+|recipe&nbsp;№&nbsp;056|Unboxing primitive types from wrapper objects - one method and IsInstanceOf [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo056)|
+|recipe&nbsp;№&nbsp;057|Hello Scala! I am passing structures! [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo057)|
+|recipe&nbsp;№&nbsp;058|Passing "unsigned long" to JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo058)|
+|recipe&nbsp;№&nbsp;059|Using code from static library inside JNI based code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo059)|
+|recipe&nbsp;№&nbsp;060|How to run Java code (with Log4j) from C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo060)|
+|recipe&nbsp;№&nbsp;061|Passing std::map<std::string, std::string> from C++ to Java [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo061)|
+|recipe&nbsp;№&nbsp;063|Accessing fields of inner class [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo063)|
+|recipe&nbsp;№&nbsp;064|Running simple JNI code - using JDK9 modules [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo064)|
+|recipe&nbsp;№&nbsp;065|Very simple, Java based, 'Hello world' code - calling it from Objective-C (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo065)|
+|recipe&nbsp;№&nbsp;066|Embedding JVM inside macOS application bundle and calling JVM from Objective-C (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo066)|
+|recipe&nbsp;№&nbsp;067|Iterating over objects inside java.util.List - using get method [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo067)|
+|recipe&nbsp;№&nbsp;068|Iterating over objects inside java.util.List - using java.util.Iterator [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo068)|
+|recipe&nbsp;№&nbsp;069|Iterating over objects inside array of Objects (SimpleBean[]) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo069)|
+|[recipe&nbsp;№&nbsp;D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD001)|
+|recipe&nbsp;№&nbsp;D003|Profiling JNI based code using Instruments.app (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD003)|
 
 [![Download](https://img.shields.io/badge/download-click%20here-red.svg)](https://github.com/mkowsiak/jnicookbook/archive/master.zip)
