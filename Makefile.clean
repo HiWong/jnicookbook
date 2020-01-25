@@ -1,0 +1,3 @@
+clean-common:
+	@test -z "target/*" || rm -rf target/*
+	@test -z "lib/*" || rm -rf lib/*

@@ -25,7 +25,9 @@ test:
 jar:
 	jar --create --file lib/client.jar --main-class client.CallHelloWorld -C modules/client .
 
-clean:
-	-rm -rfv modules/*
-	-rm c/recipeNo064_HelloWorld.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo064_HelloWorld.h)
+	$(call rm-test,modules/client)
+	$(call rm-test,modules/recipeNo064)
+
+include ../Makefile.clean
