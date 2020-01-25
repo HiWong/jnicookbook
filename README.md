@@ -21,10 +21,10 @@ Remember that you can always run each and every sample separatelly. Simply call 
 
     > cd jnicookbook/recipeNo001
     > make
-    /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk...
+    /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/...
     ...
     > make test
-    /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk...
+    /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/...
     library: :./lib
     Hello world!
 
@@ -32,9 +32,9 @@ Remember that you can always run each and every sample separatelly. Simply call 
   <img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/compile.gif">
 </p>
     
-# Ready for Java 12 and onwards
+# Ready for Java 8 and onwards
 
-JNI Cookbook samples were adapted to Java 12 release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with Java 8 - for any reasons - you should be able to use samples as well.
+JNI Cookbook samples were adapted to Java 13 release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with Java 8 - for any reasons - you should be able to use samples as well.
 
 JNI Cookbook samples were tested with:
 
