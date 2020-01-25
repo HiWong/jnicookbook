@@ -34,7 +34,7 @@ Remember that you can always run each and every sample separatelly. Simply call 
     
 # Ready for Java 8 and onwards
 
-JNI Cookbook samples were adapted to Java 13 release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with Java 8 - for any reasons - you should be able to use samples as well.
+JNI Cookbook samples were adapted to `Java 13` release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with `Java 8` - for any reasons - you should be able to use samples as well.
 
 JNI Cookbook samples were tested with:
 
@@ -94,7 +94,8 @@ export LD_LIBRARY_PATH=./lib:${LD_LIBRARY_PATH}
 JNI Cookbook contains `Scala` based samplesi. These samples are using `JNA` to call native code. Please make sure to install most recent version of `Scala` and `sbt`. This will allow you to avoid following error:
 
 ```
-Exception in thread "main" java.io.IOError: java.lang.RuntimeException: /packages cannot be represented as URI
+Exception in thread "main" java.io.IOError: 
+    java.lang.RuntimeException: /packages cannot be represented as URI
 ```
 
 At the time of writing these versions were, respectivelly: [Scala 2.13.1](https://downloads.lightbend.com/scala/2.13.1/scala-2.13.1.tgz) and [sbt 1.3.7](https://piccolo.link/sbt-1.3.7.tgz).
