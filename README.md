@@ -43,6 +43,7 @@ JNI Cookbook samples were tested with:
 * JDK 10
 * JDK 11
 * JDK 12 
+* JDK 13
 
 # Debugging
 
@@ -60,18 +61,18 @@ At the moment, JNI Cookbook targets Linux and macOS. It should work on both plat
 
 Make sure to install [XCode](https://itunes.apple.com/pl/app/xcode/id497799835?mt=12). Once installed, perform installation of `Command Line Tools`.
 
-Make sure to install [OpenJDK](https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_osx-x64_bin.tar.gz) or [Java SE Development Kit 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html).
+Make sure to install [OpenJDK](https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_osx-x64_bin.tar.gz) or [Java SE Development Kit 13](https://www.oracle.com/technetwork/java/javase/downloads/jdk13-downloads-5672538.html)).
 
 Once installed, make sure to set `JAVA_HOME` following way
 
 ```
-export JAVA_HOME=$(/usr/libexec/java_home -v 12)
+export JAVA_HOME=$(/usr/libexec/java_home -v 13)
 ```
 
 # Setting up Ubuntu system for JNI Cookbook
 
 ```
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-13-jdk
 sudo apt install git
 sudo apt install make
 sudo apt install gcc
@@ -87,6 +88,16 @@ export JAVA_HOME=`readlink -f $(which java) | sed 's|/bin/java||'`
 # Inside JNI we base on system's way of locating the lib.
 export LD_LIBRARY_PATH=./lib:${LD_LIBRARY_PATH}
 ```
+
+# Setting up Scala
+
+JNI Cookbook contains `Scala` based samplesi. These samples are using `JNA` to call native code. Please make sure to install most recent version of `Scala` and `sbt`. This will allow you to avoid following error:
+
+```
+Exception in thread "main" java.io.IOError: java.lang.RuntimeException: /packages cannot be represented as URI
+```
+
+At the time of writing these versions were, respectivelly: [Scala 2.13.1](https://downloads.lightbend.com/scala/2.13.1/scala-2.13.1.tgz) and [sbt 1.3.7](https://piccolo.link/sbt-1.3.7.tgz).
 
 # Table of content
 
