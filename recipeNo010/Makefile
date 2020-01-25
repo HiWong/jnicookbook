@@ -11,8 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo010.ReturnString
 
-.PHONY: clean
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo010_ReturnString.h
-	-rm -rfv lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo010_ReturnString.h)
+
+include ../Makefile.clean

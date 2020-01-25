@@ -11,7 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo003.PassDouble
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo003_PassDouble.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo003_PassDouble.h)
+
+include ../Makefile.clean

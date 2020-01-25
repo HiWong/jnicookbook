@@ -11,8 +11,8 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo032.Main
 
-clean:
-	-rm -rfv target/*
-	-rm -rf lib/*
-	-rm c/recipeNo032_Main.h
+clean: clean-common
+	$(call rm-test,c/recipeNo032_Main.h)
+
+include ../Makefile.clean
 

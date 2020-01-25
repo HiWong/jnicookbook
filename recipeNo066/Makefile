@@ -42,8 +42,8 @@ install: main.darwin compilejava
 test: install
 	./recipeNo066.app/Contents/MacOS/recipeNo066
 
-clean:
-	test -z "target/*" || rm -rfv target/*
-	test -z "lib/*" || rm -rf lib/*
-	test -z "recipeNo066.app" || rm -rf recipeNo066.app
+clean: clean-common
+	$(call rm-test,recipeNo066.app)
+
+include ../Makefile.clean
 

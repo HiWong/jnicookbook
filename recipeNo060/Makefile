@@ -28,8 +28,9 @@ main.linux:
 test:
 	lib/recipeNo060_main
 
-clean:
-	-rm -rfv target/*
-	-rm -rfv jar/log4j-*
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,jar/log4j-api-2.12.1.jar)
+	$(call rm-test,jar/log4j-core-2.12.1.jar)
+
+include ../Makefile.clean
 

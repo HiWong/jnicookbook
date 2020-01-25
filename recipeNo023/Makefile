@@ -20,7 +20,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path="$(CURDIR)/lib:$(CURDIR)/" -cp target recipeNo023.HelloWorld
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo023_HelloWorld.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo023_HelloWorld.h)
+
+include ../Makefile.clean

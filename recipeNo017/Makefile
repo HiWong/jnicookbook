@@ -23,8 +23,8 @@ test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo017.SigTerm
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo017.SigTermExtLib
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo017_SigTerm.h
-	-rm c/recipeNo017_SigTermExtLib.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo017_SigTerm.h)
+	$(call rm-test,c/recipeNo017_SigTermExtLib.h)
+
+include ../Makefile.clean

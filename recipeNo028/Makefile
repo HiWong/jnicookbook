@@ -25,7 +25,7 @@ main.linux:
 test:
 	lib/recipeNo028_main	
 
-clean:
-	-rm -rfv target/*
-	-rm -rf lib/*
+clean: clean-common
+
+include ../Makefile.clean
 

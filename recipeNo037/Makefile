@@ -12,8 +12,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo037.PassHashMap
 
-.PHONY: clean
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo037_PassHashMap.h
-	-rm -rfv lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo037_PassHashMap.h)
+
+include ../Makefile.clean

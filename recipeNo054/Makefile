@@ -14,7 +14,7 @@ download_jna:
 test:
 	scala -Djna.library.path="./lib" -classpath "./target:jar/jna-5.4.0.jar" HelloJNA
 
-clean:
-	-rm -rf target/*
-	-rm -rf lib/*
-	-rm -rf jar/*
+clean: clean-common
+	$(call rm-test,"jar/*")
+
+include ../Makefile.clean

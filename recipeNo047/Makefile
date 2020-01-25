@@ -11,7 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo047.FillTheMap
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo047_FillTheMap.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo047_FillTheMap.h)
+
+include ../Makefile.clean

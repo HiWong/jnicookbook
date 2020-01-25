@@ -12,7 +12,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo067.PassList
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo067_PassList.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo067_PassList.h)
+
+include ../Makefile.clean

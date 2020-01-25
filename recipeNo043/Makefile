@@ -14,9 +14,8 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo043.Main
 
-.PHONY: clean
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo043_GetEnv.h
-	-rm c/recipeNo043_SetEnv.h
-	-rm -rfv lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo043_GetEnv.h)
+	$(call rm-test,c/recipeNo043_SetEnv.h)
+
+include ../Makefile.clean

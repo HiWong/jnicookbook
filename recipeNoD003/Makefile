@@ -11,7 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNoD003.AllocateMemory 
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNoD003_AllocateMemory.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNoD003_AllocateMemory.h)
+
+include ../Makefile.clean

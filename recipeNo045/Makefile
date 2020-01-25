@@ -11,7 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo045.VectorOfVectors
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo045_VectorOfVectors.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo045_VectorOfVectors.h)
+
+include ../Makefile.clean

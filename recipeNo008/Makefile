@@ -11,8 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo008.PassBoolean
 
-.PHONY: clean
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo008_PassBoolean.h
-	-rm -rfv lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo008_PassBoolean.h)
+
+include ../Makefile.clean

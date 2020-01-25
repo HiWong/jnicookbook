@@ -15,8 +15,8 @@ jar:
 test: compilejava compilec jar
 	$(JAVA_HOME)/bin/java -jar recipeNo031.jar
 
-clean:
-	-rm recipeNo031.jar
-	-rm -rfv target/*
-	-rm c/recipeNo031_HelloWorld.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,recipeNo031.jar)
+	$(call rm-test,c/recipeNo031_HelloWorld.h)
+
+include ../Makefile.clean

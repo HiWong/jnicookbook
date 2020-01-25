@@ -12,7 +12,7 @@ compilejava:
 test:	compilec compilejava
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo019.ThrowException
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo019_ThrowException.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo019_ThrowException.h)
+
+include ../Makefile.clean

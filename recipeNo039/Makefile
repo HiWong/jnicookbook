@@ -11,8 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo039.PassArray2D
 
-.PHONY: clean
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo039_PassArray2D.h
-	-rm -rfv lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo039_PassArray2D.h)
+
+include ../Makefile.clean

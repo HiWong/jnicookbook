@@ -11,8 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo005.PassShort
 
-.PHONY: clean
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo005_PassShort.h
-	-rm -rfv lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo005_PassShort.h)
+
+include ../Makefile.clean

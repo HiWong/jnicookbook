@@ -12,7 +12,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo063.Main
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo063_Main.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo063_Main.h)
+
+include ../Makefile.clean

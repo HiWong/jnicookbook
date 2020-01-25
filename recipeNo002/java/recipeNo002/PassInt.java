@@ -4,7 +4,7 @@ package recipeNo002;
 public class PassInt {
 
   /* This is the native method we want to call */
-  public static native void displayInt(int value,   int value2, double val3);
+  public static native void displayInt(int value);
 
   /* Inside static block we will load shared library */
   static {
@@ -13,11 +13,11 @@ public class PassInt {
 
   public static void main(String[] args) {
     /* This message will help you determine whether
-    		LD_LIBRARY_PATH is correctly set
+       LD_LIBRARY_PATH is correctly set
     */
     System.out.println("library: " + System.getProperty("java.library.path"));
 
     /* Call to shared library */
-    PassInt.displayInt(1, 2, 3);
+    PassInt.displayInt( 1 );
   }
 }

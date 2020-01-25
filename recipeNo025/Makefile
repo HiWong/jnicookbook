@@ -12,7 +12,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo025.HelloWorld
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo025_HelloWorld.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo025_HelloWorld.h)
+
+include ../Makefile.clean

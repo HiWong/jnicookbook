@@ -22,7 +22,7 @@ test:
 	scala -Djna.library.path="./lib" -classpath "./target:jar/jna-5.4.0.jar" recipeNo057.HelloJNA
 	$(JAVA_HOME)/bin/java -Djna.library.path="./lib" -cp "./jar/jna-5.4.0.jar:target" recipeNo057.Main
 
-clean:
-	-rm -rf target/*
-	-rm -rf lib/*
-	-rm -rf jar/*
+clean: clean-common
+	$(call rm-test,"jar/*")
+
+include ../Makefile.clean

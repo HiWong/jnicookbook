@@ -13,9 +13,9 @@ test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo015.SigSegv
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo015.SigSegvNoHandler
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo015_SigSegv.h
-	-rm c/recipeNo015_SigSegvNoHandler.h
-	-rm -rf lib/*
-	-rm hs_err*
+clean: clean-common
+	$(call rm-test,c/recipeNo015_SigSegv.h)
+	$(call rm-test,c/recipeNo015_SigSegvNoHandler.h)
+	$(call rm-test,"hs_err*")
+
+include ../Makefile.clean

@@ -12,8 +12,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo040.PassByteBuffer
 
-.PHONY: clean
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo040_PassByteBuffer.h
-	-rm -rfv lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo040_PassByteBuffer.h)
+
+include ../Makefile.clean

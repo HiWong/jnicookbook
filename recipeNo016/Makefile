@@ -14,8 +14,8 @@ test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo016.SigTerm
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo016.SigTermNoHandler
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo016_SigTerm.h
-	-rm c/recipeNo016_SigTermNoHandler.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo016_SigTerm.h)
+	$(call rm-test,c/recipeNo016_SigTermNoHandler.h)
+
+include ../Makefile.clean

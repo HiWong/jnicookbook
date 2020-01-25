@@ -34,7 +34,7 @@ testjni:
 testjna:
 	$(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp ./lib:target:./jar/jna-4.2.2.jar recipeNo033.HelloWorldJNA $(RECIPE_NO_033_ITER)
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo033_HelloWorldJNI.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo033_HelloWorldJNI.h)
+
+include ../Makefile.clean

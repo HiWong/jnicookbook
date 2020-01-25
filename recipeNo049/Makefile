@@ -24,8 +24,8 @@ main.linux:
 test:
 	lib/recipeNo049_main	
 
-clean:
-	-rm -rfv target/*
-	-rm -rf lib/*
-	-rm jvm.log
+clean: clean-common
+	$(call rm-test,jvm.log)
+
+include ../Makefile.clean
 

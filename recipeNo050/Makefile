@@ -28,7 +28,7 @@ jar:
 	jar cfm lib/libjava.jar Manifest.txt -C target recipeNo050/Main.class
 	
 
-clean:
-	-rm -rfv target/*
-	-rm -rf lib/*
+clean: clean-common
+
+include ../Makefile.clean
 

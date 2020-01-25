@@ -13,8 +13,8 @@ test:
 	time $(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo053.MainPrimitiveArray
 	time $(JAVA_HOME)/bin/java -Djava.library.path=$(LD_LIBRARY_PATH):./lib -cp target recipeNo053.MainArrayElements
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNo053_MainPrimitiveArray.h
-	-rm c/recipeNo053_MainArrayElements.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNo053_MainPrimitiveArray.h)
+	$(call rm-test,c/recipeNo053_MainArrayElements.h)
+
+include ../Makefile.clean

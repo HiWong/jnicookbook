@@ -11,7 +11,7 @@ compilejava:
 test:
 	$(JAVA_HOME)/bin/java -Djava.library.path=./lib -cp target recipeNoD001.HelloWorld
 
-clean:
-	-rm -rfv target/*
-	-rm c/recipeNoD001_HelloWorld.h
-	-rm -rf lib/*
+clean: clean-common
+	$(call rm-test,c/recipeNoD001_HelloWorld.h)
+
+include ../Makefile.clean
