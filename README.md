@@ -104,7 +104,7 @@ At the time of writing these versions were, respectivelly: [Scala 2.13.1](https:
 
 |Recipe № | Short description |
 |---|---|
-|[recipe № 001](http://jnicookbook.owsiak.org/recipe-No-001/)|running simple JNI code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo001)|
+|[recipe №&nbsp;001](http://jnicookbook.owsiak.org/recipe-No-001/)|running simple JNI code [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo001)|
 |[recipe № 002](http://jnicookbook.owsiak.org/recipe-No-002/)|passing int value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo002)|
 |[recipe № 003](http://jnicookbook.owsiak.org/recipe-No-003/)|passing double value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo003)|
 |[recipe № 004](http://jnicookbook.owsiak.org/recipe-No-004/)|passing long value from Java to C [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo004)|
