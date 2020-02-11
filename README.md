@@ -19,14 +19,16 @@ The easiest way to build and run codes is to clone the repo and run all tests.
     
 Remember that you can always run each and every sample separatelly. Simply call `make` inside given recipe. Let's say you want to run `recipeNo001`. All you have to do is to run
 
-    > cd jnicookbook/recipeNo001
-    > make
-    /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/...
-    ...
-    > make test
-    /Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/...
-    library: :./lib
-    Hello world!
+```
+> cd jnicookbook/recipeNo001
+> make
+/Library/Java/JavaVirtualMachines/jdk-14.jdk/...
+...
+> make test
+/Library/Java/JavaVirtualMachines/jdk-14.jdk/...
+library: :./lib
+Hello world!
+```
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/image/compile.gif">
@@ -34,7 +36,7 @@ Remember that you can always run each and every sample separatelly. Simply call 
     
 # Ready for Java 8 and onwards
 
-JNI Cookbook samples were adapted to `Java 13` release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with `Java 8` - for any reasons - you should be able to use samples as well.
+JNI Cookbook samples were adapted to `Java 14` release. You shouldn't experience any issues while working with most recent release of Java. If you have stuck with `Java 8` - for any reasons - you should be able to use samples as well.
 
 JNI Cookbook samples were tested with:
 
@@ -44,6 +46,7 @@ JNI Cookbook samples were tested with:
 * JDK 11
 * JDK 12 
 * JDK 13
+* JDK 14
 
 # Debugging
 
@@ -67,6 +70,14 @@ Once installed, make sure to set `JAVA_HOME` following way
 
 ```
 export JAVA_HOME=$(/usr/libexec/java_home -v 13)
+```
+
+If you are one of those brave people, you can use the most recent version of [OpenJDK - JDK 14](https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/36/GPL/openjdk-14_osx-x64_bin.tar.gz).
+
+Once installed, make sure to set `JAVA_HOME` following way
+
+```
+export JAVA_HOME=$(/usr/libexec/java_home -v 14)
 ```
 
 # Setting up Ubuntu system for JNI Cookbook
