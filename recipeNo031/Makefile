@@ -10,7 +10,7 @@ compilejava:
 	$(JAVA_HOME)/bin/javac -cp target -d target java/recipeNo031/Main.java
 
 jar:
-	jar cfe recipeNo031.jar recipeNo031.Main -C target . lib	
+	$(JAVA_HOME)/bin/jar cfe recipeNo031.jar recipeNo031.Main -C target . lib	
 
 test: compilejava compilec jar
 	$(JAVA_HOME)/bin/java -jar recipeNo031.jar

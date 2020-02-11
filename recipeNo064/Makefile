@@ -23,7 +23,7 @@ test: jar
 		-jar lib/client.jar
 
 jar:
-	jar --create --file lib/client.jar --main-class client.CallHelloWorld -C modules/client .
+	$(JAVA_HOME)/bin/jar --create --file lib/client.jar --main-class client.CallHelloWorld -C modules/client .
 
 clean: clean-common
 	$(call rm-test,c/recipeNo064_HelloWorld.h)

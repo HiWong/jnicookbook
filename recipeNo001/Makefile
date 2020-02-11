@@ -1,9 +1,9 @@
 include ../Makefile.common
 
-all: compilejava compilec
+all: compilejava lib/libHelloWorld.$(EXT)
 
-compilec:
-	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) c/recipeNo001_HelloWorld.c -o lib/libHelloWorld.$(EXT)
+lib/libHelloWorld.$(EXT): c/recipeNo001_HelloWorld.c
+	cc -g -shared -fpic -I${JAVA_HOME}/include -I${JAVA_HOME}/include/$(ARCH) $< -o $@
 
 compilejava:
 	$(JAVA_HOME)/bin/javac -h c -d target java/recipeNo001/HelloWorld.java

@@ -25,7 +25,7 @@ test:
 	lib/recipeNo050_main
 
 jar:
-	jar cfm lib/libjava.jar Manifest.txt -C target recipeNo050/Main.class
+	$(JAVA_HOME)/bin/jar cfm lib/libjava.jar Manifest.txt -C target recipeNo050/Main.class
 	
 
 clean: clean-common
