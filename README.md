@@ -181,6 +181,8 @@ At the time of writing these versions were, respectivelly: [Scala 2.13.1](https:
 |recipe&nbsp;№&nbsp;067|Iterating over objects inside java.util.List - using get method [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo067)|
 |recipe&nbsp;№&nbsp;068|Iterating over objects inside java.util.List - using java.util.Iterator [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo068)|
 |recipe&nbsp;№&nbsp;069|Iterating over objects inside array of Objects (SimpleBean[]) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo069)|
+|recipe&nbsp;№&nbsp;070|Passing structure by reference using JNA [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo070)|
+|recipe&nbsp;№&nbsp;071|Be carefull with errno. It can bite. [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo071)|
 |[recipe&nbsp;№&nbsp;D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD001)|
 |recipe&nbsp;№&nbsp;D003|Profiling JNI based code using Instruments.app (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD003)|
 
