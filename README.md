@@ -186,6 +186,9 @@ At the time of writing these versions were, respectivelly: [Scala 2.13.1](https:
 |recipe&nbsp;№&nbsp;072|Handling errno using custom exception type [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNo072)|
 |recipe&nbsp;№&nbsp;073|Passing errno and errno string inside wrapper class [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNo073)|
 |recipe&nbsp;№&nbsp;074|Passing errno via JNI routine's arguments [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNo074)|
+|recipe&nbsp;№&nbsp;075|Returning object with number of fields from JNI (constructor) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNo075)|
+|recipe&nbsp;№&nbsp;076|Returning object with number of fields from JNI (setters) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNo076)|
+|recipe&nbsp;№&nbsp;077|Passing null as method argument inside JNI [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNo077)|
 |[recipe&nbsp;№&nbsp;D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNoD001)|
 |recipe&nbsp;№&nbsp;D003|Profiling JNI based code using Instruments.app (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipes/recipeNoD003)|
 
