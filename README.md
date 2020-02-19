@@ -12,7 +12,7 @@ Inside this repository you can find JNI related codes that I have collected over
 The easiest way to build and run codes is to clone the repo and run all tests.
 
     > git clone https://github.com/mkowsiak/jnicookbook.git
-    > cd jnicookbook
+    > cd jnicookbook/recipes
     > make all
     > make test
     > make clean
@@ -20,7 +20,7 @@ The easiest way to build and run codes is to clone the repo and run all tests.
 Remember that you can always run each and every sample separatelly. Simply call `make` inside given recipe. Let's say you want to run `recipeNo001`. All you have to do is to run
 
 ```
-> cd jnicookbook/recipeNo001
+> cd jnicookbook/recipes/recipeNo001
 > make
 /Library/Java/JavaVirtualMachines/jdk-14.jdk/...
 ...
