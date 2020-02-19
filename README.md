@@ -184,6 +184,8 @@ At the time of writing these versions were, respectivelly: [Scala 2.13.1](https:
 |recipe&nbsp;№&nbsp;070|Passing structure by reference using JNA [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo070)|
 |recipe&nbsp;№&nbsp;071|Be carefull with errno. It can bite. [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo071)|
 |recipe&nbsp;№&nbsp;072|Handling errno using custom exception type [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo072)|
+|recipe&nbsp;№&nbsp;073|Passing errno and errno string inside wrapper class [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo073)|
+|recipe&nbsp;№&nbsp;074|Passing errno via JNI routine's arguments [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNo074)|
 |[recipe&nbsp;№&nbsp;D001](http://jnicookbook.owsiak.org/recipe-No-D001/)|debugging JNI code with CLion [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD001)|
 |recipe&nbsp;№&nbsp;D003|Profiling JNI based code using Instruments.app (macOS only) [[source]](https://github.com/mkowsiak/jnicookbook/tree/master/recipeNoD003)|
 
