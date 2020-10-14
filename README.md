@@ -111,6 +111,20 @@ Exception in thread "main" java.io.IOError:
 
 At the time of writing these versions were, respectivelly: [Scala 2.13.1](https://downloads.lightbend.com/scala/2.13.1/scala-2.13.1.tgz) and [sbt 1.3.7](https://piccolo.link/sbt-1.3.7.tgz).
 
+# Nobody has time for that!
+
+> - Are you crazy? Do you think I have time for all that setup?
+
+You are right, nobody has time for that. This is why this product comes with self sufficient, ready for immediate use, `Docker` file. Once you start the container, everything is there. All you have to do is to build the image and run the container.
+
+```
+> cd docker
+> docker build -t jnicookbook .
+> docker run -it jnicookbook
+```
+
+that's it. That's all you have to do, to get all the JNI Cookbook samples ready for testing.
+
 # Table of content
 
 |Recipe № | Short description |
