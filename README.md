@@ -113,7 +113,7 @@ At the time of writing these versions were, respectivelly: [Scala 2.13.1](https:
 
 # Nobody has time for that!
 
-> - Are you crazy? Do you think I have time for all that setup?
+> Are you crazy? Do you think I have time for all that setup?
 
 You are right, nobody has time for that. This is why this product comes with self sufficient, ready for immediate use, `Docker` file. Once you start the container, everything is there. All you have to do is to build the image and run the container.
 
