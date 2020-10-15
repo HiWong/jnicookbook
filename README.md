@@ -125,6 +125,10 @@ You are right, nobody has time for that. This is why this product comes with sel
 
 that's it. That's all you have to do, to get all the JNI Cookbook samples ready for testing.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mkowsiak/jnicookbook/master/images/docker_jnicookbook.gif">
+</p>
+
 # Table of content
 
 |Recipe № | Short description |
